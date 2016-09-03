@@ -1,6 +1,8 @@
 package com.anteriore.colab;
 
 public class Interest {
+    public static final String TABLE_NAME = "Interest";
+
     private String interestName;
     private int interestImage;
 
