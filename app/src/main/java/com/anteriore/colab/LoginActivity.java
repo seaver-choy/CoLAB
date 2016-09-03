@@ -42,10 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(LoginActivity.this, CardActivity.class);
-                startActivity(intent);
-                finish();
-                //submitForm();
+                submitForm();
             }
         });
 
@@ -94,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
 
                         } else {
-                            //Intent intent = new Intent(LoginActivity.this, UserActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(LoginActivity.this, InterestActivity.class);
+                            startActivity(intent);
                             finish();
                         }
                     }

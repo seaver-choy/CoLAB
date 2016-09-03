@@ -3,6 +3,7 @@ package com.anteriore.colab;
 public class Interest {
     private String interestName;
     private int interestImage;
+    public static String TABLE_NAME = "Interest";
 
     public Interest() {
     }
