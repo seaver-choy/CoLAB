@@ -24,7 +24,7 @@
             android:name=".RegisterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CardActivity"
+            android:name=".InterestActivity"
             android:screenOrientation="portrait"/>
 
         <meta-data
