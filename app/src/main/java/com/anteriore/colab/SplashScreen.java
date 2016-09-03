@@ -25,7 +25,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainIntent = new Intent(getBaseContext(), LoginActivity.class);
+                Intent mainIntent = new Intent(getBaseContext(), CardActivity.class);
                 startActivity(mainIntent);
                 finish();
             }
@@ -40,7 +40,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainIntent = new Intent(getBaseContext(), LoginActivity.class);
+                Intent mainIntent = new Intent(getBaseContext(), CardActivity.class);
                 startActivity(mainIntent);
                 finish();
             }
@@ -55,7 +55,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainIntent = new Intent(getBaseContext(), LoginActivity.class);
+                Intent mainIntent = new Intent(getBaseContext(), CardActivity.class);
                 startActivity(mainIntent);
                 finish();
             }
