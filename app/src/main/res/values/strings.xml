@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">CoLAB</string>	
+    <string name="app_name">CoLAB</string>
     <string name="facebook_app_id">663806747101259</string>
+    <string name="err_msg_email">Invalid email.</string>
+    <string name="auth_failed">Invalid username or password.</string>
+    <string name="err_msg_required">Email is required.</string>
 </resources>
