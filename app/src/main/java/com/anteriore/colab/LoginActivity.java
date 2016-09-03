@@ -42,7 +42,10 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                submitForm();
+                Intent intent = new Intent(LoginActivity.this, CardActivity.class);
+                startActivity(intent);
+                finish();
+                //submitForm();
             }
         });
 
