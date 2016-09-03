@@ -15,15 +15,16 @@
             android:id="@+id/input_username"
             android:padding="12dp"
             android:layout_width="240dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:textSize="16dp"
             android:textColor="@color/colorDefault"
             android:hint="Username"/>
         <EditText
             android:id="@+id/input_password"
             android:layout_marginTop="16dp"
+            android:padding="12dp"
             android:layout_width="240dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:textSize="16dp"
             android:textColor="@color/colorDefault"
             android:hint="Password"/>
