@@ -6,3 +6,8 @@
 .DS_Store
 /build
 /captures
+.idea/gradle.xml
+.idea/gradle.xml
+.idea/workspace.xml
+app/app.iml
+local.properties
