@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
     <com.makeramen.roundedimageview.RoundedImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/interest_background"
+        android:id="@+id/card_background"
         android:layout_width="190dp"
         android:layout_height="230dp"
         android:layout_centerInParent="true"
@@ -15,14 +15,14 @@
         android:alpha="0.6"
         app:riv_corner_radius="10dip" />
     <TextView
-        android:id="@+id/interest_text"
+        android:id="@+id/card_text"
         android:layout_margin="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/interest_background"
-        android:layout_alignTop="@id/interest_background"
-        android:layout_alignRight="@id/interest_background"
-        android:layout_alignBottom="@id/interest_background"
+        android:layout_alignLeft="@id/card_background"
+        android:layout_alignTop="@id/card_background"
+        android:layout_alignRight="@id/card_background"
+        android:layout_alignBottom="@id/card_background"
         android:gravity="center_horizontal"
         android:textColor="@color/colorDefault"
         android:textSize="22sp"/>

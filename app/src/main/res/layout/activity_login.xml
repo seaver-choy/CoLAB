@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="16dp"
+    android:paddingTop="48dp"
+    android:paddingLeft="48dp"
+    android:paddingRight="48dp"
+    android:paddingBottom="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
@@ -9,32 +12,50 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical">
+        <ImageView
+            android:id="@+id/colab_icon"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:src="@drawable/colab_icon_circle"/>
         <EditText
             android:id="@+id/input_username"
-            android:padding="12dp"
-            android:layout_width="240dp"
-            android:layout_height="60dp"
-            android:textSize="16dp"
+            android:layout_marginTop="40dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/round_corner"
             android:textColor="@color/colorDefault"
+            android:textColorHint="@color/colorDefault"
+            android:textSize="16dp"
             android:hint="Username"/>
         <EditText
             android:id="@+id/input_password"
             android:layout_marginTop="16dp"
-            android:padding="12dp"
-            android:layout_width="240dp"
-            android:layout_height="60dp"
-            android:textSize="16dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/round_corner"
             android:textColor="@color/colorDefault"
+            android:textColorHint="@color/colorDefault"
+            android:textSize="16dp"
             android:hint="Password"/>
         <Button
             android:id="@+id/button_login"
             android:layout_marginTop="16dp"
-            android:layout_width="240dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/round_button"
             android:textColor="@color/colorDefault"
-            android:text="LOGIN"/>
+            android:text="LOG IN"/>
     </LinearLayout>
+    <TextView
+        android:id="@+id/no_account_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorLogoText"
+        android:textSize="13dp"/>
 </RelativeLayout>
