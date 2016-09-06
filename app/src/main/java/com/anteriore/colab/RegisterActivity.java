@@ -19,7 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText inputFullname;
+    private EditText inputFirstname;
+    private EditText inputLastname;
     private EditText inputEmail;
     private EditText inputPassword;
     private EditText confirmPassword;
@@ -34,7 +35,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_register);
 
-        inputFullname = (EditText) findViewById(R.id.register_input_fullname);
+        inputFirstname = (EditText) findViewById(R.id.register_input_firstname);
+        inputLastname = (EditText) findViewById(R.id.register_input_firstname);
         inputEmail = (EditText) findViewById(R.id.register_input_email);
         inputPassword = (EditText) findViewById(R.id.register_input_password);
         confirmPassword = (EditText) findViewById(R.id.register_confirm_password);

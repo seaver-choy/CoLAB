@@ -8,14 +8,18 @@ import java.util.ArrayList;
 
 public class InterestActivity extends AppCompatActivity {
 
-    private RecyclerView interestRecyclerView;
+    private RecyclerView likesRecyclerView;
+    private RecyclerView hobbiesRecyclerView;
+    private RecyclerView passionRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interest);
 
-        interestRecyclerView = (RecyclerView) findViewById(R.id.interest_recyclerview);
+        likesRecyclerView = (RecyclerView) findViewById(R.id.likes_recyclerview);
+        hobbiesRecyclerView = (RecyclerView) findViewById(R.id.hobbies_recyclerview);
+        passionRecyclerView = (RecyclerView) findViewById(R.id.passion_recyclerview);
 
         ArrayList<Interest> interestList = new ArrayList<>();
 
@@ -26,9 +30,13 @@ public class InterestActivity extends AppCompatActivity {
 
         final InterestAdapter interestAdapter = new InterestAdapter(interestList);
 
-        interestRecyclerView.setAdapter(interestAdapter);
+        likesRecyclerView.setAdapter(interestAdapter);
+        hobbiesRecyclerView.setAdapter(interestAdapter);
+        passionRecyclerView.setAdapter(interestAdapter);
 
-        interestRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        likesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
+        hobbiesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
+        passionRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
 
     }
 }

@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        noAccount.setText((Html.fromHtml("No Account Yet? Click <u>Here</u> to Get One!")));
+        noAccount.setText((Html.fromHtml("register")));
 
         noAccount.setOnClickListener(new View.OnClickListener() {
             @Override

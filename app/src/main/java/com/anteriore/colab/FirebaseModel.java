@@ -1,16 +1,12 @@
 package com.anteriore.colab;
 
-/**
- * Created by Seaver on 9/6/2016.
- */
-
-import com.google.firebase
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseModel {
     private DatabaseReference mDatabase;
 
-    public FirebaseModel()
-    {
+    public FirebaseModel() {
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 }

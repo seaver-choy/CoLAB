@@ -6,4 +6,5 @@
     <color name="colorDefault">#FFFFFF</color>
     <color name="colorBackground">#F5F5F5</color>
     <color name="colorLogoText">#929292</color>
+    <color name="colorBlack">#000000</color>
 </resources>
