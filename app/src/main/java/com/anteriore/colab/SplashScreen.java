@@ -5,13 +5,13 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGTH = 1500;
     private TextView coLABSplash;
-
     @Override
     public void onCreate(Bundle icicle) {
 
@@ -30,6 +30,8 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
+
+
     }
 
     @Override

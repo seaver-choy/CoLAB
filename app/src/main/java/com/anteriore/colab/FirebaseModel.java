@@ -4,7 +4,10 @@ package com.anteriore.colab;
  * Created by Seaver on 9/6/2016.
  */
 
-import com.google.firebase
+import android.util.Log;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseModel {
     private DatabaseReference mDatabase;
@@ -12,5 +15,30 @@ public class FirebaseModel {
     public FirebaseModel()
     {
         mDatabase = FirebaseDatabase.getInstance().getReference();
+    }
+
+    public DatabaseReference getmDatabase() {
+        return mDatabase;
+    }
+
+    public void writeInterestToDatabase(Interest interest)
+    {
+        mDatabase.child("colab").child("interests").child(interest.getInterestID()).setValue(interest);
+        Log.e("Write To Database", interest.getInterestName());
+    }
+
+    public void writeNewInterestToDatabase(Interest interest)
+    {
+        mDatabase.child("colab").child("interests").push().setValue(interest);
+    }
+
+    public void writeUserToDatabase(User user)
+    {
+        mDatabase.child("colab").child("users").child(user.getUserID()).setValue(user);
+    }
+
+    public void writeNewUserToDatabase(User user)
+    {
+        mDatabase.child("colab").child("users").push().setValue(user);
     }
 }

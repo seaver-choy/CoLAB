@@ -25,13 +25,14 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText confirmPassword;
     private Button registerButton;
     private FirebaseAuth auth;
+    private FirebaseModel fbModel;
     private String TAG = "RegisterActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         auth = FirebaseAuth.getInstance();
-
+        fbModel = new FirebaseModel();
         setContentView(R.layout.activity_register);
 
         inputFullname = (EditText) findViewById(R.id.register_input_fullname);
@@ -76,7 +77,9 @@ public class RegisterActivity extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Log.d(TAG,"Authentication failed." + task.getException());
 
-                        } else {
+                        } else{
+                            User newUser = new User(inputFullname.getText().toString(), inputEmail.getText().toString());
+                            fbModel.writeNewUserToDatabase(newUser);
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             finish();
                         }
