@@ -5,6 +5,10 @@ public class Interest {
     private int interestImage;
     private String interestID;
     public static String TABLE_NAME = "Interest";
+    public static String COLUMN_NAME = "interest_name";
+    public static String COLUMN_IMAGE = "interest_image";
+    public static String COLUMN_ID = "interestID";
+
 
     public Interest() {
     }
@@ -14,7 +18,7 @@ public class Interest {
         this.interestImage = interestImage;
     }
 
-    public Interest(String interestName, int interestImage, String interestID) {
+    public Interest(String interestID , String interestName, int interestImage) {
         this.interestName = interestName;
         this.interestImage = interestImage;
         this.interestID = interestID;
