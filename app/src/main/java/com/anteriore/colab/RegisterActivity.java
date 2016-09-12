@@ -80,8 +80,8 @@ public class RegisterActivity extends AppCompatActivity {
                             Log.d(TAG,"Authentication failed." + task.getException());
 
                         } else{
-                            //User newUser = new User(inputFullname.getText().toString(), inputEmail.getText().toString());
-                            //fbModel.writeNewUserToDatabase(newUser);
+                            User newUser = new User(inputFirstname.getText().toString(),inputLastname.getText().toString(), inputEmail.getText().toString());
+                            fbModel.writeNewUserToDatabase(newUser);
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             finish();
                         }
