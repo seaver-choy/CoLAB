@@ -21,3 +21,5 @@ local.properties
 .idea/gradle.xml
 *.iml
 local.properties
+app/app.iml
+local.properties

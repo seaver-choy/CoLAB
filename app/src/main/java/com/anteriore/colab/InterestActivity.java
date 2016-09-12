@@ -30,7 +30,6 @@ public class InterestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interest);
 
-        interestRecyclerView = (RecyclerView) findViewById(R.id.interest_recyclerview);
         fbModel = new FirebaseModel();
         final ArrayList<Interest> interestList = new ArrayList<>();
         likesRecyclerView = (RecyclerView) findViewById(R.id.likes_recyclerview);
