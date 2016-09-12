@@ -81,13 +81,10 @@ public class InterestActivity extends AppCompatActivity {
         fbModel.getmDatabase().child("colab").child("interests").addChildEventListener(CEL);
         fbModel.getmDatabase().removeEventListener(CEL);
 
-
-        interestRecyclerView.setAdapter(interestAdapter);
         likesRecyclerView.setAdapter(interestAdapter);
         hobbiesRecyclerView.setAdapter(interestAdapter);
         passionRecyclerView.setAdapter(interestAdapter);
 
-        interestRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         likesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
         hobbiesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
         passionRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));

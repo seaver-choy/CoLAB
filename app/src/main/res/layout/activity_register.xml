@@ -22,6 +22,7 @@
             android:textColor="@color/colorDefault"
             android:textColorHint="@color/colorDefault"
             android:textSize="16sp"
+            android:singleLine="true"
             android:hint="First Name"/>
         <EditText
             android:id="@+id/register_input_lastname"
@@ -33,6 +34,7 @@
             android:textColor="@color/colorDefault"
             android:textColorHint="@color/colorDefault"
             android:textSize="16sp"
+            android:singleLine="true"
             android:hint="Last Name"/>
         <EditText
             android:id="@+id/register_input_email"
@@ -44,6 +46,7 @@
             android:textColor="@color/colorDefault"
             android:textColorHint="@color/colorDefault"
             android:textSize="16sp"
+            android:singleLine="true"
             android:hint="Email"/>
         <EditText
             android:id="@+id/register_input_password"
@@ -56,7 +59,7 @@
             android:textColorHint="@color/colorDefault"
             android:textSize="16sp"
             android:inputType="textPassword"
-            android:password = "true"
+            android:singleLine="true"
             android:hint="Password"/>
         <EditText
             android:id="@+id/register_confirm_password"
@@ -69,7 +72,7 @@
             android:textColorHint="@color/colorDefault"
             android:textSize="16sp"
             android:inputType="textPassword"
-            android:password="true"
+            android:singleLine="true"
             android:hint="Confirm Password"/>
         <LinearLayout
             android:layout_marginTop="16dp"
@@ -85,6 +88,7 @@
                 android:textColor="@color/colorDefault"
                 android:textColorHint="@color/colorDefault"
                 android:textSize="16sp"
+                android:singleLine="true"
                 android:hint="MM"
                 android:gravity="center"
                 android:layout_weight="1"/>
@@ -98,7 +102,7 @@
                 android:textColor="@color/colorDefault"
                 android:textColorHint="@color/colorDefault"
                 android:textSize="16sp"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:hint="DD"
                 android:gravity="center"
                 android:layout_weight="1"/>
@@ -112,7 +116,7 @@
                 android:textColor="@color/colorDefault"
                 android:textColorHint="@color/colorDefault"
                 android:textSize="16sp"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:hint="YYYY"
                 android:gravity="center"
                 android:layout_weight="2"/>
