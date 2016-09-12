@@ -7,7 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 
+import com.anteriore.colab.Model.Hobby;
 import com.anteriore.colab.Model.Interest;
+import com.anteriore.colab.Model.Like;
+import com.anteriore.colab.Model.Passion;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +33,9 @@ public class InterestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_interest);
 
         fbModel = new FirebaseModel();
-        final ArrayList<Interest> interestList = new ArrayList<>();
+        final ArrayList<Interest> likeList = new ArrayList<>();
+        final ArrayList<Interest> passionList = new ArrayList<>();
+        final ArrayList<Interest> hobbyList = new ArrayList<>();
         likesRecyclerView = (RecyclerView) findViewById(R.id.likes_recyclerview);
         hobbiesRecyclerView = (RecyclerView) findViewById(R.id.hobbies_recyclerview);
         passionRecyclerView = (RecyclerView) findViewById(R.id.passion_recyclerview);
@@ -46,14 +51,18 @@ public class InterestActivity extends AppCompatActivity {
             }
         });
 
-        final InterestAdapter interestAdapter = new InterestAdapter(interestList);
+        final InterestAdapter likeAdapter = new InterestAdapter(likeList);
+        final InterestAdapter passionAdapter = new InterestAdapter(passionList);
+        final InterestAdapter hobbyAdapter = new InterestAdapter(hobbyList);
 
         ChildEventListener CEL = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("Child Added", dataSnapshot.getKey());
-                interestList.add(dataSnapshot.getValue(Interest.class));
-                interestAdapter.notifyDataSetChanged();
+                if(dataSnapshot.child("interestName").exists()) {
+                    likeList.add(dataSnapshot.getValue(Interest.class));
+                }
+                likeAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -77,12 +86,80 @@ public class InterestActivity extends AppCompatActivity {
             }
         };
 
-        fbModel.getmDatabase().child("colab").child("interests").addChildEventListener(CEL);
+        fbModel.getmDatabase().child("colab").child("interests").child("like").addChildEventListener(CEL);
         fbModel.getmDatabase().removeEventListener(CEL);
 
-        likesRecyclerView.setAdapter(interestAdapter);
-        hobbiesRecyclerView.setAdapter(interestAdapter);
-        passionRecyclerView.setAdapter(interestAdapter);
+        CEL = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Log.d("Child Added", dataSnapshot.getKey());
+                if(dataSnapshot.child("interestName").exists()) {
+                    hobbyList.add(dataSnapshot.getValue(Interest.class));
+                }
+                hobbyAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        fbModel.getmDatabase().child("colab").child("interests").child("hobby").addChildEventListener(CEL);
+        fbModel.getmDatabase().removeEventListener(CEL);
+
+        CEL = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Log.d("Child Added", dataSnapshot.getKey());
+                if(dataSnapshot.child("interestName").exists()) {
+                    passionList.add(dataSnapshot.getValue(Interest.class));
+                }
+                passionAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        fbModel.getmDatabase().child("colab").child("interests").child("passion").addChildEventListener(CEL);
+        fbModel.getmDatabase().removeEventListener(CEL);
+
+        likesRecyclerView.setAdapter(likeAdapter);
+        hobbiesRecyclerView.setAdapter(hobbyAdapter);
+        passionRecyclerView.setAdapter(passionAdapter);
 
         likesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
         hobbiesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));

@@ -1,9 +1,12 @@
 package com.anteriore.colab.Model;
 
+import java.util.ArrayList;
+
 public class Interest {
     private String interestName;
     private int interestImage;
     private String interestID;
+    private int currLikes;
     public static String TABLE_NAME = "Interest";
     public static String COLUMN_NAME = "interest_name";
     public static String COLUMN_IMAGE = "interest_image";
@@ -16,16 +19,14 @@ public class Interest {
     public Interest(String interestName, int interestImage) {
         this.interestName = interestName;
         this.interestImage = interestImage;
+        this.currLikes = 0;
     }
 
     public Interest(String interestID , String interestName, int interestImage) {
         this.interestName = interestName;
         this.interestImage = interestImage;
         this.interestID = interestID;
-    }
-
-    public Interest(String interestName) {
-        this.interestName = interestName;
+        this.currLikes = 0;
     }
 
     public String getInterestID() {

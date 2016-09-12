@@ -7,4 +7,6 @@ public class Like extends Interest{
     public enum LikesTypes{
         Organizations, Restaurants, Athletes, Artists
     }
+
+
 }
