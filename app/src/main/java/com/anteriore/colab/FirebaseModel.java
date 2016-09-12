@@ -6,6 +6,7 @@ package com.anteriore.colab;
 
 import android.util.Log;
 
+import com.anteriore.colab.Model.Interest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

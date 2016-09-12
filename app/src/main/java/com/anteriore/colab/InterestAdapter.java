@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.anteriore.colab.Model.Interest;
+
 import java.util.List;
 
 public class InterestAdapter extends RecyclerView.Adapter<InterestAdapter.InterestHolder> {

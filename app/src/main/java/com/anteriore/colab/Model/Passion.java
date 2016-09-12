@@ -1,4 +1,4 @@
-package com.anteriore.colab;
+package com.anteriore.colab.Model;
 
 /**
  * Created by Seaver on 9/12/2016.

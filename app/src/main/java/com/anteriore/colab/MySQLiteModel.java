@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.anteriore.colab.Model.Interest;
+
 import java.util.ArrayList;
 
 public class MySQLiteModel extends SQLiteOpenHelper{
