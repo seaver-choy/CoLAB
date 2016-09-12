@@ -46,10 +46,10 @@ public class SwipeDeckAdapter extends BaseAdapter {
             v = inflater.inflate(R.layout.card_item, parent, false);
         }
 
-        ImageView imageView = (ImageView) v.findViewById(R.id.offer_image);
+        ImageView imageView = (ImageView) v.findViewById(R.id.card_image);
         Picasso.with(context).load(R.drawable.interest_passion).fit().centerCrop().into(imageView);
-        TextView textView = (TextView) v.findViewById(R.id.sample_text);
-        String item = (String)getItem(position);
+        TextView textView = (TextView) v.findViewById(R.id.card_text);
+        String item = (String) getItem(position) + " Test Text";
         textView.setText(item);
 
         v.setOnClickListener(new View.OnClickListener() {

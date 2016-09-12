@@ -1,38 +1,33 @@
-<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
-    android:layout_gravity="center"
     android:layout_width="300dp"
-    android:layout_height="wrap_content"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="4dp"
-    card_view:cardUseCompatPadding="true"
-    android:layout_margin="8dp"
-    android:gravity="center_horizontal"
-    android:padding="25dp">
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                tools:src="@drawable/interest_passion"
-                android:id="@+id/offer_image"
-                android:layout_width="match_parent"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
-                android:layout_height="400dp" />
-        </RelativeLayout>
+    android:layout_height="400dp"
+    android:layout_gravity="center"
+    android:background="@color/colorDefault"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true">
+    <LinearLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            tools:src="@drawable/interest_passion"
+            android:id="@+id/card_image"
+            android:layout_width="280dp"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"/>
         <TextView
-            android:id="@+id/sample_text"
+            android:id="@+id/card_text"
+            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sample Text"
             android:gravity="center_horizontal"
-            android:textSize="20dp" />
-
+            android:textSize="19sp"/>
     </LinearLayout>
 </android.support.v7.widget.CardView>
