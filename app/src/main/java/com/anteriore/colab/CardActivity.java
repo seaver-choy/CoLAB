@@ -46,17 +46,6 @@ public class CardActivity extends AppCompatActivity {
             }
         });
 
-        cardStack.setOnTouchListener(new OnSwipeTouchListener(this) {
-            @Override
-            public void onSwipeLeft() {
-                cardStack.swipeTopCardLeft(180);
-            }
-            @Override
-            public void onSwipeRight() {
-                cardStack.swipeTopCardRight(180);
-            }
-        });
-
         //example of buttons triggering events on the deck
         Button btn = (Button) findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
