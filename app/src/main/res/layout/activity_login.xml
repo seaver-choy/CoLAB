@@ -39,6 +39,7 @@
             android:textColor="@color/colorDefault"
             android:textColorHint="@color/colorDefault"
             android:textSize="16sp"
+            android:password = "true"
             android:hint="Password"/>
         <Button
             android:id="@+id/button_login"
