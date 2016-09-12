@@ -5,30 +5,35 @@ package com.anteriore.colab;
  */
 public class User {
 
-    private String fullName;
+    private String firstName;
+    private String lastName;
     private String birthday;
     private String email;
     private String userID;
 
-    public User(String fullName, String birthday, String email) {
-        this.fullName = fullName;
-        this.birthday = birthday;
-        this.email = email;
-    }
-
-    public User(String fullName, String email) {
-        this.fullName = fullName;
-        this.email = email;
-    }
-
     public User() {
     }
 
-    public User(String fullName, String birthday, String email, String userID) {
-        this.fullName = fullName;
-        this.birthday = birthday;
+    public User(String firstName, String lastName, String email){
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
-        this.userID = userID;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getUserID() {
@@ -37,14 +42,6 @@ public class User {
 
     public void setUserID(String userID) {
         this.userID = userID;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
     }
 
     public String getBirthday() {
