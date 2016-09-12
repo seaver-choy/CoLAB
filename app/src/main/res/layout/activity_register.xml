@@ -89,6 +89,8 @@
                 android:textColorHint="@color/colorDefault"
                 android:textSize="16sp"
                 android:singleLine="true"
+                android:maxLength="2"
+                android:inputType="number"
                 android:hint="MM"
                 android:gravity="center"
                 android:layout_weight="1"/>
@@ -103,6 +105,8 @@
                 android:textColorHint="@color/colorDefault"
                 android:textSize="16sp"
                 android:singleLine="true"
+                android:maxLength="2"
+                android:inputType="number"
                 android:hint="DD"
                 android:gravity="center"
                 android:layout_weight="1"/>
@@ -117,6 +121,8 @@
                 android:textColorHint="@color/colorDefault"
                 android:textSize="16sp"
                 android:singleLine="true"
+                android:maxLength="4"
+                android:inputType="number"
                 android:hint="YYYY"
                 android:gravity="center"
                 android:layout_weight="2"/>

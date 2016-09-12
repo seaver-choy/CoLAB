@@ -24,6 +24,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText inputEmail;
     private EditText inputPassword;
     private EditText confirmPassword;
+    private EditText month;
+    private EditText day;
+    private EditText year;
     private Button registerButton;
     private FirebaseAuth auth;
     private FirebaseModel fbModel;
@@ -41,6 +44,9 @@ public class RegisterActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.register_input_email);
         inputPassword = (EditText) findViewById(R.id.register_input_password);
         confirmPassword = (EditText) findViewById(R.id.register_confirm_password);
+        month = (EditText) findViewById(R.id.register_month);
+        day = (EditText) findViewById(R.id.register_day);
+        year = (EditText) findViewById(R.id.register_year);
         registerButton = (Button) findViewById(R.id.button_register);
 
         registerButton.setOnClickListener(new View.OnClickListener() {

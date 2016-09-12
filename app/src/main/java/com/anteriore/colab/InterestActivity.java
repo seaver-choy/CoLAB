@@ -6,11 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
-
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,7 +16,6 @@ import java.util.ArrayList;
 
 public class InterestActivity extends AppCompatActivity {
 
-    private RecyclerView interestRecyclerView;
     private FirebaseModel fbModel;
     private RecyclerView likesRecyclerView;
     private RecyclerView hobbiesRecyclerView;
