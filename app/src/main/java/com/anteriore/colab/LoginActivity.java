@@ -1,6 +1,7 @@
 package com.anteriore.colab;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        noAccount.setText((Html.fromHtml("No Account Yet? Click <u>Here</u> to Get One!")));
+        noAccount.setText((Html.fromHtml("register")));
 
         noAccount.setOnClickListener(new View.OnClickListener() {
             @Override

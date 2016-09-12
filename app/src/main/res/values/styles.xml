@@ -5,6 +5,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
+        <item name="searchViewStyle">@style/InterestSearchView</item>
+    </style>
+
+    <style name="InterestSearchView" parent="Widget.AppCompat.Light.SearchView">
+        <item name="submitBackground">@color/colorBackground</item>
+        <item name="queryBackground">@color/colorBackground</item>
     </style>
 
 </resources>

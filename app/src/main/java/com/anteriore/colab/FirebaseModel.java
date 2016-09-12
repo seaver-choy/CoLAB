@@ -12,8 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class FirebaseModel {
     private DatabaseReference mDatabase;
 
-    public FirebaseModel()
-    {
+    public FirebaseModel() {
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 

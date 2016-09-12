@@ -4,12 +4,11 @@
     android:paddingTop="48dp"
     android:paddingLeft="48dp"
     android:paddingRight="48dp"
-    android:paddingBottom="16dp"
+    android:paddingBottom="24dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -28,7 +27,7 @@
             android:background="@drawable/round_corner"
             android:textColor="@color/colorDefault"
             android:textColorHint="@color/colorDefault"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:hint="Username"/>
         <EditText
             android:id="@+id/input_password"
@@ -39,7 +38,7 @@
             android:background="@drawable/round_corner"
             android:textColor="@color/colorDefault"
             android:textColorHint="@color/colorDefault"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:hint="Password"/>
         <Button
             android:id="@+id/button_login"
@@ -57,5 +56,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorLogoText"
-        android:textSize="13dp"/>
+        android:textSize="16sp"/>
 </RelativeLayout>

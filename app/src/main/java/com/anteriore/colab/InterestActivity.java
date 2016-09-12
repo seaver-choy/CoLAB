@@ -1,5 +1,6 @@
 package com.anteriore.colab;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,8 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -17,6 +20,10 @@ public class InterestActivity extends AppCompatActivity {
 
     private RecyclerView interestRecyclerView;
     private FirebaseModel fbModel;
+    private RecyclerView likesRecyclerView;
+    private RecyclerView hobbiesRecyclerView;
+    private RecyclerView passionRecyclerView;
+    private TextView skipStep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,20 @@ public class InterestActivity extends AppCompatActivity {
         interestRecyclerView = (RecyclerView) findViewById(R.id.interest_recyclerview);
         fbModel = new FirebaseModel();
         final ArrayList<Interest> interestList = new ArrayList<>();
+        likesRecyclerView = (RecyclerView) findViewById(R.id.likes_recyclerview);
+        hobbiesRecyclerView = (RecyclerView) findViewById(R.id.hobbies_recyclerview);
+        passionRecyclerView = (RecyclerView) findViewById(R.id.passion_recyclerview);
+
+        skipStep = (TextView) findViewById(R.id.skip_step_text);
+
+        skipStep.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InterestActivity.this, CardActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         final InterestAdapter interestAdapter = new InterestAdapter(interestList);
 
@@ -63,8 +84,14 @@ public class InterestActivity extends AppCompatActivity {
 
 
         interestRecyclerView.setAdapter(interestAdapter);
+        likesRecyclerView.setAdapter(interestAdapter);
+        hobbiesRecyclerView.setAdapter(interestAdapter);
+        passionRecyclerView.setAdapter(interestAdapter);
 
         interestRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        likesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
+        hobbiesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
+        passionRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
 
     }
 }
