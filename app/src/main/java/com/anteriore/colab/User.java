@@ -11,6 +11,7 @@ public class User {
     private String email;
     private String userID;
 
+
     public User() {
     }
 
@@ -19,6 +20,8 @@ public class User {
         this.lastName = lastName;
         this.email = email;
     }
+
+
 
     public String getFirstName() {
         return firstName;
