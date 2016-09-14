@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.anteriore.colab.Model.Interest;
+import com.anteriore.colab.Model.Like;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,8 @@ public class MySQLiteModel extends SQLiteOpenHelper{
         db.execSQL("CREATE TABLE " + Interest.TABLE_NAME + "("
                 + Interest.COLUMN_ID + " TEXT PRIMARY KEY,"
                 + Interest.COLUMN_NAME + " TEXT,"
-                + Interest.COLUMN_IMAGE + " INTEGER" + ")");
+                + Interest.COLUMN_TYPE + " TEXT,"
+                + Interest.COLUMN_IMAGE + " TEXT" + ")");
     }
 
     @Override
@@ -36,7 +38,7 @@ public class MySQLiteModel extends SQLiteOpenHelper{
 
         if (cursor.moveToFirst()) {
             do {
-                localInterests.add(new Interest(cursor.getString(0), cursor.getString(1), cursor.getInt(2)));
+                localInterests.add(new Interest(cursor.getString(0), cursor.getString(1), cursor.getString(2)));
             } while (cursor.moveToNext());
         }
 
@@ -44,5 +46,28 @@ public class MySQLiteModel extends SQLiteOpenHelper{
         db.close();
 
         return localInterests;
+    }
+
+    public ArrayList<Like> getListLikes(){
+        ArrayList<Like> localLikes = new ArrayList<>();
+
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Interest.TABLE_NAME + " WHERE " + Interest.COLUMN_TYPE + " = " + Interest.interestTypes.Like.toString(), null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                localLikes.add(new Like(cursor.getString(0), cursor.getString(1), cursor.getString(2)));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return localLikes;
+    }
+
+    public void addInterest(Interest interest, String interestType)
+    {
+
     }
 }

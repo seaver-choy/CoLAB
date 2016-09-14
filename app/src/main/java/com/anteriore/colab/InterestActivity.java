@@ -1,6 +1,7 @@
 package com.anteriore.colab;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -60,7 +61,14 @@ public class InterestActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("Child Added", dataSnapshot.getKey());
                 if(dataSnapshot.child("interestName").exists()) {
-                    likeList.add(dataSnapshot.getValue(Interest.class));
+                    Interest currLike = dataSnapshot.getValue(Interest.class);
+
+                    Resources resources = getApplication().getApplicationContext().getResources();
+                    final int resourceId = resources.getIdentifier(currLike.getInterestImage(), "drawable",
+                            getApplication().getApplicationContext().getPackageName());
+
+                    currLike.setInterestImageResource(resourceId);
+                    likeList.add(currLike);
                 }
                 likeAdapter.notifyDataSetChanged();
             }
@@ -94,7 +102,14 @@ public class InterestActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("Child Added", dataSnapshot.getKey());
                 if(dataSnapshot.child("interestName").exists()) {
-                    hobbyList.add(dataSnapshot.getValue(Interest.class));
+                    Interest currHobby = dataSnapshot.getValue(Interest.class);
+
+                    Resources resources = getResources();
+                    final int resourceId = resources.getIdentifier(currHobby.getInterestImage(), "drawable",
+                            getPackageName());
+
+                    currHobby.setInterestImageResource(resourceId);
+                    hobbyList.add(currHobby);
                 }
                 hobbyAdapter.notifyDataSetChanged();
             }
@@ -128,7 +143,14 @@ public class InterestActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("Child Added", dataSnapshot.getKey());
                 if(dataSnapshot.child("interestName").exists()) {
-                    passionList.add(dataSnapshot.getValue(Interest.class));
+                    Interest currPassion = dataSnapshot.getValue(Interest.class);
+
+                    Resources resources = getResources();
+                    final int resourceId = resources.getIdentifier(currPassion.getInterestImage(), "drawable",
+                            getPackageName());
+
+                    currPassion.setInterestImageResource(resourceId);
+                    passionList.add(currPassion);
                 }
                 passionAdapter.notifyDataSetChanged();
             }

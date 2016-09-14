@@ -39,7 +39,8 @@ public class InterestAdapter extends RecyclerView.Adapter<InterestAdapter.Intere
     public void onBindViewHolder(InterestHolder holder, int position) {
         String interestName = interestList.get(position).getInterestName();
         holder.interestTitle.setText(interestName);
-        holder.interestBackground.setImageResource(interestList.get(position).getInterestImage());
+
+        holder.interestBackground.setImageResource(interestList.get(position).getInterestImageResource());
     }
 
     @Override
