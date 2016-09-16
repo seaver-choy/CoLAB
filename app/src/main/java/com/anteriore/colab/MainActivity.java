@@ -88,6 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 return wasSelected;
             }
         });
-
     }
+    //TODO: onResume()
 }
