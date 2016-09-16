@@ -32,7 +32,8 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".CardActivity"></activity>
+        <activity android:name=".CardActivity" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

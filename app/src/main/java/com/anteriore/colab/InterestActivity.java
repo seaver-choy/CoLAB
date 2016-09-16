@@ -46,7 +46,7 @@ public class InterestActivity extends AppCompatActivity {
         skipStep.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InterestActivity.this, CardActivity.class);
+                Intent intent = new Intent(InterestActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
