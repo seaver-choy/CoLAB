@@ -20,15 +20,15 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
 
-        ahBottomNavigationItems.add(new AHBottomNavigationItem("Profile", R.drawable.profile));
+        ahBottomNavigationItems.add(new AHBottomNavigationItem("Deck", R.drawable.cards));
         ahBottomNavigationItems.add(new AHBottomNavigationItem("Community", R.drawable.community));
         ahBottomNavigationItems.add(new AHBottomNavigationItem("coLAB", R.drawable.chat));
-        ahBottomNavigationItems.add(new AHBottomNavigationItem("Cards", R.drawable.cards));
         ahBottomNavigationItems.add(new AHBottomNavigationItem("Notifications", R.drawable.notifications));
+        ahBottomNavigationItems.add(new AHBottomNavigationItem("Profile", R.drawable.profile));
 
         bottomNavigation.addItems(ahBottomNavigationItems);
         bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#FFFFFF"));
-        bottomNavigation.setAccentColor(Color.parseColor("#6CC1DF"));
+        bottomNavigation.setAccentColor(Color.parseColor("#F06D72"));
         bottomNavigation.setInactiveColor(Color.parseColor("#747474"));
         bottomNavigation.setForceTitlesDisplay(true);
         bottomNavigation.setCurrentItem(0);
@@ -36,11 +36,12 @@ public class MainActivity extends AppCompatActivity {
         final ProfileFragment profile = new ProfileFragment();
         final CommunityFragment community = new CommunityFragment();
         final ChatFragment chat = new ChatFragment();
+        final DeckFragment deck = new DeckFragment();
         final NotificationsFragment notifications = new NotificationsFragment();
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.current_frame, profile, profile.getClass().getName())
+                .replace(R.id.current_frame, deck, deck.getClass().getName())
                 .commit();
 
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener(){
@@ -50,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 0){
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.current_frame, profile, profile.getClass().getName())
+                            .replace(R.id.current_frame, deck, deck.getClass().getName())
                             .commit();
-                    bottomNavigation.setAccentColor(Color.parseColor("#6CC1DF"));
+                    bottomNavigation.setAccentColor(Color.parseColor("#F06D72"));
                 }
                 else if(position == 1){
                     getSupportFragmentManager()
@@ -70,16 +71,16 @@ public class MainActivity extends AppCompatActivity {
                 else if(position == 3){
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.current_frame, profile, profile.getClass().getName())
+                            .replace(R.id.current_frame, notifications, notifications.getClass().getName())
                             .commit();
-                    bottomNavigation.setAccentColor(Color.parseColor("#F06D72"));
+                    bottomNavigation.setAccentColor(Color.parseColor("#F0B439"));
                 }
                 else if(position == 4){
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.current_frame, notifications, notifications.getClass().getName())
+                            .replace(R.id.current_frame, profile, profile.getClass().getName())
                             .commit();
-                    bottomNavigation.setAccentColor(Color.parseColor("#F0B439"));
+                    bottomNavigation.setAccentColor(Color.parseColor("#6CC1DF"));
                 }
 
                 bottomNavigation.setCurrentItem(position, wasSelected);

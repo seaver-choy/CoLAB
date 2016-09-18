@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
-    android:layout_width="300dp"
-    android:layout_height="400dp"
+    android:layout_width="280dp"
+    android:layout_height="380dp"
     android:layout_gravity="center"
     android:background="@color/colorDefault"
     card_view:cardCornerRadius="12dp"
@@ -18,8 +18,8 @@
         <ImageView
             tools:src="@drawable/interest_passion"
             android:id="@+id/card_image"
-            android:layout_width="280dp"
-            android:layout_height="300dp"
+            android:layout_width="260dp"
+            android:layout_height="280dp"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"/>
         <TextView
@@ -28,6 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textSize="19sp"/>
+            android:textSize="18sp"/>
     </LinearLayout>
 </android.support.v7.widget.CardView>
