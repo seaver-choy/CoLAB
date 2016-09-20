@@ -1,27 +1,36 @@
 package com.anteriore.colab;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.anteriore.colab.Model.Interest;
 import com.daprlabs.aaron.swipedeck.SwipeDeck;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CardActivity extends AppCompatActivity {
 
     private SwipeDeck cardStack;
-    private List testData;
+    private ArrayList<Interest> cardData;
     private SwipeDeckAdapter adapter;
     private Button dislikeButton;
     private Button likeButton;
+    private FirebaseModel fbModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card);
 
+        fbModel = new FirebaseModel();
         dislikeButton = (Button) findViewById(R.id.swipe_left);
         likeButton = (Button) findViewById(R.id.swipe_right);
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
@@ -29,14 +38,50 @@ public class CardActivity extends AppCompatActivity {
         dislikeButton.getBackground().setAlpha(192);
         likeButton.getBackground().setAlpha(192);
 
-        testData = new ArrayList<>();
-        testData.add("0");
-        testData.add("1");
-        testData.add("2");
-        testData.add("3");
-        testData.add("4");
+        cardData = new ArrayList();
 
-        adapter = new SwipeDeckAdapter(testData, this);
+        ChildEventListener CEL = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Log.d("Child Added", dataSnapshot.getKey());
+                if(dataSnapshot.child("interestName").exists()) {
+                    Interest currLike = dataSnapshot.getValue(Interest.class);
+
+                    Resources resources = getApplication().getApplicationContext().getResources();
+                    final int resourceId = resources.getIdentifier(currLike.getInterestImage(), "drawable",
+                            getApplication().getApplicationContext().getPackageName());
+
+                    currLike.setInterestImageResource(resourceId);
+                    cardData.add(currLike);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        fbModel.getmDatabase().child("colab").child("interests").child("like").child("artists").addChildEventListener(CEL);
+        fbModel.getmDatabase().removeEventListener(CEL);
+
+        adapter = new SwipeDeckAdapter(cardData, this);
         if(cardStack != null){
             cardStack.setAdapter(adapter);
         }

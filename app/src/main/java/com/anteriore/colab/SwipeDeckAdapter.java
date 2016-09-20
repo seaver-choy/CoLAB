@@ -8,15 +8,18 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.anteriore.colab.Model.Interest;
 import com.squareup.picasso.Picasso;
-import java.util.List;
+
+import java.util.ArrayList;
 
 public class SwipeDeckAdapter extends BaseAdapter {
 
-    private List<String> data;
+    private ArrayList<Interest> data;
     private Context context;
 
-    public SwipeDeckAdapter(List<String> data, Context context) {
+    public SwipeDeckAdapter(ArrayList<Interest> data, Context context) {
         this.data = data;
         this.context = context;
     }
@@ -47,9 +50,9 @@ public class SwipeDeckAdapter extends BaseAdapter {
         }
 
         ImageView imageView = (ImageView) v.findViewById(R.id.card_image);
-        Picasso.with(context).load(R.drawable.interest_passion).fit().centerCrop().into(imageView);
+        Picasso.with(context).load(data.get(position).getInterestImageResource()).fit().centerCrop().into(imageView);
         TextView textView = (TextView) v.findViewById(R.id.card_text);
-        String item = (String) getItem(position) + " Test Text";
+        String item = data.get(position).getInterestName();
         textView.setText(item);
 
         v.setOnClickListener(new View.OnClickListener() {

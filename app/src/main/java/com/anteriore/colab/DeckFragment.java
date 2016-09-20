@@ -1,5 +1,6 @@
 package com.anteriore.colab;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,7 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.anteriore.colab.Model.Interest;
 import com.daprlabs.aaron.swipedeck.SwipeDeck;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +22,16 @@ import java.util.List;
 public class DeckFragment extends Fragment {
 
     private SwipeDeck cardStack;
-    private List testData;
+    private ArrayList<Interest> cardData;
     private SwipeDeckAdapter adapter;
     private Button dislikeButton;
     private Button likeButton;
+    private FirebaseModel fbModel;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.activity_card, container, false);
 
+        fbModel = new FirebaseModel();
         dislikeButton = (Button) v.findViewById(R.id.swipe_left);
         likeButton = (Button) v.findViewById(R.id.swipe_right);
         cardStack = (SwipeDeck) v.findViewById(R.id.swipe_deck);
@@ -32,14 +39,50 @@ public class DeckFragment extends Fragment {
         dislikeButton.getBackground().setAlpha(192);
         likeButton.getBackground().setAlpha(192);
 
-        testData = new ArrayList<>();
-        testData.add("0");
-        testData.add("1");
-        testData.add("2");
-        testData.add("3");
-        testData.add("4");
+        cardData = new ArrayList();
 
-        adapter = new SwipeDeckAdapter(testData, getContext());
+        ChildEventListener CEL = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Log.d("Child Added", dataSnapshot.getKey());
+                if(dataSnapshot.child("interestName").exists()) {
+                    Interest currLike = dataSnapshot.getValue(Interest.class);
+
+                    Resources resources = getActivity().getApplicationContext().getResources();
+                    final int resourceId = resources.getIdentifier(currLike.getInterestImage(), "drawable",
+                            getActivity().getApplication().getApplicationContext().getPackageName());
+
+                    currLike.setInterestImageResource(resourceId);
+                    cardData.add(currLike);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        fbModel.getmDatabase().child("colab").child("interests").child("like").child("artists").addChildEventListener(CEL);
+        fbModel.getmDatabase().removeEventListener(CEL);
+
+        adapter = new SwipeDeckAdapter(cardData, this.getContext());
         if(cardStack != null){
             cardStack.setAdapter(adapter);
         }
