@@ -28,13 +28,13 @@
                 android:id="@+id/swipe_left"
                 android:layout_width="92dp"
                 android:layout_height="92dp"
-                android:background="@drawable/dislike" />
+                android:background="@drawable/dislike_button" />
             <Button
                 android:layout_marginLeft="36dp"
                 android:id="@+id/swipe_right"
                 android:layout_width="92dp"
                 android:layout_height="92dp"
-                android:background="@drawable/like" />
+                android:background="@drawable/like_button" />
         </LinearLayout>
     </com.daprlabs.aaron.swipedeck.layouts.SwipeFrameLayout>
 </RelativeLayout>
