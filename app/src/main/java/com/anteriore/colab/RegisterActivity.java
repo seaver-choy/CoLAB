@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         inputFirstname = (EditText) findViewById(R.id.register_input_firstname);
-        inputLastname = (EditText) findViewById(R.id.register_input_firstname);
+        inputLastname = (EditText) findViewById(R.id.register_input_lastname);
         inputEmail = (EditText) findViewById(R.id.register_input_email);
         inputPassword = (EditText) findViewById(R.id.register_input_password);
         confirmPassword = (EditText) findViewById(R.id.register_confirm_password);
@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Log.d(TAG,"Authentication failed." + task.getException());
 
                         } else{
-                            User newUser = new User(inputFirstname.getText().toString(),inputLastname.getText().toString(), inputEmail.getText().toString());
+                            User newUser = new User(auth.getCurrentUser().getUid(), inputFirstname.getText().toString(),inputLastname.getText().toString(), inputEmail.getText().toString());
                             fbModel.writeNewUserToDatabase(newUser);
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             finish();
