@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         final ProfileFragment profile = new ProfileFragment();
         final CommunityFragment community = new CommunityFragment();
         final ChatFragment chat = new ChatFragment();
-        final DeckFragment deck = new DeckFragment();
+        final InterestFragment deck = new InterestFragment();
         final NotificationsFragment notifications = new NotificationsFragment();
 
         getSupportFragmentManager()
