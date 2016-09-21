@@ -67,6 +67,8 @@ public class InterestActivity extends AppCompatActivity {
                     final int resourceId = resources.getIdentifier(currLike.getInterestImage(), "drawable",
                             getApplication().getApplicationContext().getPackageName());
 
+                    currLike.setInterestType(Interest.interestTypes.like);
+                    currLike.setInterestID(dataSnapshot.getKey());
                     currLike.setInterestImageResource(resourceId);
                     likeList.add(currLike);
                 }
@@ -108,6 +110,8 @@ public class InterestActivity extends AppCompatActivity {
                     final int resourceId = resources.getIdentifier(currHobby.getInterestImage(), "drawable",
                             getPackageName());
 
+                    currHobby.setInterestType(Interest.interestTypes.hobby);
+                    currHobby.setInterestID(dataSnapshot.getKey());
                     currHobby.setInterestImageResource(resourceId);
                     hobbyList.add(currHobby);
                 }
@@ -149,6 +153,8 @@ public class InterestActivity extends AppCompatActivity {
                     final int resourceId = resources.getIdentifier(currPassion.getInterestImage(), "drawable",
                             getPackageName());
 
+                    currPassion.setInterestType(Interest.interestTypes.passion);
+                    currPassion.setInterestID(dataSnapshot.getKey());
                     currPassion.setInterestImageResource(resourceId);
                     passionList.add(currPassion);
                 }

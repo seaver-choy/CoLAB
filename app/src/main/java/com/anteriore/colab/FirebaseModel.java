@@ -50,7 +50,7 @@ public class FirebaseModel {
 
     public void writeNewUserToDatabase(User user)
     {
-        mDatabase.child("colab").child("users").push().setValue(user);
+        mDatabase.child("colab").child("users").child(user.getUserID()).setValue(user);
     }
 
     public DatabaseReference getUserFromDatabase(String userID)

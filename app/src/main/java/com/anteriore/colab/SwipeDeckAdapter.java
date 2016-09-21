@@ -48,7 +48,7 @@ public class SwipeDeckAdapter extends BaseAdapter {
             // normally use a viewholder
             v = inflater.inflate(R.layout.card_item, parent, false);
         }
-
+        while(data.size() == 0);
         ImageView imageView = (ImageView) v.findViewById(R.id.card_image);
         Picasso.with(context).load(data.get(position).getInterestImageResource()).fit().centerCrop().into(imageView);
         TextView textView = (TextView) v.findViewById(R.id.card_text);

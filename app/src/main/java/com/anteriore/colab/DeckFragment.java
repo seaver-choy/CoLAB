@@ -79,7 +79,7 @@ public class DeckFragment extends Fragment {
             }
         };
 
-        fbModel.getmDatabase().child("colab").child("interests").child("like").child("artists").addChildEventListener(CEL);
+        fbModel.getmDatabase().child("colab").child("interests").child("hobby").child("sports").addChildEventListener(CEL);
         fbModel.getmDatabase().removeEventListener(CEL);
 
         adapter = new SwipeDeckAdapter(cardData, this.getContext());

@@ -52,7 +52,7 @@ public class MySQLiteModel extends SQLiteOpenHelper{
         ArrayList<Like> localLikes = new ArrayList<>();
 
         SQLiteDatabase db = getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + Interest.TABLE_NAME + " WHERE " + Interest.COLUMN_TYPE + " = " + Interest.interestTypes.Like.toString(), null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Interest.TABLE_NAME + " WHERE " + Interest.COLUMN_TYPE + " = " + Interest.interestTypes.like.toString(), null);
 
         if (cursor.moveToFirst()) {
             do {

@@ -1,5 +1,6 @@
 package com.anteriore.colab;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,6 +38,9 @@ public class CardActivity extends AppCompatActivity {
 
         dislikeButton.getBackground().setAlpha(192);
         likeButton.getBackground().setAlpha(192);
+
+        String interestID = getIntent().getStringExtra(Interest.interestNameConstant);
+        String interestType = getIntent().getStringExtra(Interest.interestTypeConstant);
 
         cardData = new ArrayList();
 
@@ -78,7 +82,7 @@ public class CardActivity extends AppCompatActivity {
             }
         };
 
-        fbModel.getmDatabase().child("colab").child("interests").child("like").child("artists").addChildEventListener(CEL);
+        fbModel.getmDatabase().child("colab").child("interests").child(interestType).child(interestID).addChildEventListener(CEL);
         fbModel.getmDatabase().removeEventListener(CEL);
 
         adapter = new SwipeDeckAdapter(cardData, this);

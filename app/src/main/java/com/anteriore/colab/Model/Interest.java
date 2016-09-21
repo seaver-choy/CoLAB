@@ -6,15 +6,18 @@ public class Interest {
     private String interestName;
     private String interestImage;
     private String interestID;
+    private interestTypes interestType;
     private int interestImageResource;
     private int currLikes;
+    public static String interestNameConstant = "interestName";
+    public static String interestTypeConstant = "interestType";
     public static String TABLE_NAME = "Interest";
     public static String COLUMN_NAME = "interest_name";
     public static String COLUMN_IMAGE = "interest_image";
     public static String COLUMN_ID = "interestID";
     public static String COLUMN_TYPE = "interest_type";
     public enum interestTypes {
-        Hobby, Like, Passion
+        hobby, like, passion
     }
 
     public Interest() {
@@ -31,6 +34,14 @@ public class Interest {
         this.interestImage = interestImage;
         this.interestID = interestID;
         this.currLikes = 0;
+    }
+
+    public interestTypes getInterestType() {
+        return interestType;
+    }
+
+    public void setInterestType(interestTypes interestType) {
+        this.interestType = interestType;
     }
 
     public int getInterestImageResource() {
