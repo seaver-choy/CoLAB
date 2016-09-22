@@ -15,6 +15,7 @@ public class User {
     private String email;
     private String userID;
     private ArrayList<Interest> currInterests;
+    private ArrayList<Notification> currNotifications;
     private ArrayList<User> friendList;
 
     public User() {
@@ -27,6 +28,14 @@ public class User {
         this.userID = userID;
         currInterests = new ArrayList<>();
         friendList = new ArrayList<>();
+    }
+
+    public ArrayList<Notification> getCurrNotifications() {
+        return currNotifications;
+    }
+
+    public void setCurrNotifications(ArrayList<Notification> currNotifications) {
+        this.currNotifications = currNotifications;
     }
 
     public ArrayList<Interest> getCurrInterests() {

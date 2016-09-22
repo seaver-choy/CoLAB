@@ -1,5 +1,6 @@
 package com.anteriore.colab;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -104,24 +105,34 @@ public class CardActivity extends AppCompatActivity {
         if(cardStack != null){
             cardStack.setAdapter(adapter);
         }
+
         cardStack.setCallback(new SwipeDeck.SwipeDeckCallback() {
             @Override
             public void cardSwipedLeft(long positionInAdapter) {
                 Log.i("CardActivity", "card was swiped left, position in adapter: " + positionInAdapter);
+                if (cardData.size() - 1 == (int) positionInAdapter) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
             }
 
             @Override
-            public void cardSwipedRight(long positoinInAdapter) {
-                Log.i("CardActivity", "card was swiped right, position in adapter: " + positoinInAdapter);
-
+            public void cardSwipedRight(long positionInAdapter) {
+                Log.i("CardActivity", "card was swiped right, position in adapter: " + positionInAdapter);
+                if (cardData.size() - 1== (int) positionInAdapter) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
             }
         });
+
         dislikeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cardStack.swipeTopCardLeft(120);
             }
         });
+
         likeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
