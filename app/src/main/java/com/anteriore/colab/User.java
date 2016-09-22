@@ -1,6 +1,6 @@
-package com.anteriore.colab.Model;
+package com.anteriore.colab;
 
-import com.anteriore.colab.Notification;
+import com.anteriore.colab.Model.Interest;
 
 import java.util.ArrayList;
 
@@ -14,19 +14,9 @@ public class User {
     private String birthday;
     private String email;
     private String userID;
-    private int profilePictureResource;
-    private String profilePictureName;
     private ArrayList<Interest> currInterests;
     private ArrayList<Notification> currNotifications;
     private ArrayList<User> friendList;
-
-    public static String FirebaseChildName = "users";
-    public static String FirebaseFriendList = "friendList";
-    public static String FirebaseInterestList = "currInterests";
-    public static String TABLE_NAME = "users";
-    public static String COLUMN_FIRST_NAME = "firstname";
-    public static String COLUMN_LAST_NAME = "lastname";
-    public static String COLUMN_EMAIL = "email";
 
     public User() {
     }
@@ -37,7 +27,6 @@ public class User {
         this.email = email;
         this.userID = userID;
         currInterests = new ArrayList<>();
-        currInterests.add(new Interest("HELLO", "profile"));
         friendList = new ArrayList<>();
     }
 
@@ -49,36 +38,15 @@ public class User {
         this.currNotifications = currNotifications;
     }
 
-    public int getProfilePictureResource() {
-        return profilePictureResource;
-    }
-
-    public void setProfilePictureResource(int profilePictureResource) {
-        this.profilePictureResource = profilePictureResource;
-    }
-
-    public String getProfilePictureName() {
-        return profilePictureName;
-    }
-
-    public void setProfilePictureName(String profilePictureName) {
-        this.profilePictureName = profilePictureName;
-    }
-
-    /*
     public ArrayList<Interest> getCurrInterests() {
         return currInterests;
     }
-    */
+
     public void setCurrInterests(ArrayList<Interest> currInterests) {
         this.currInterests = currInterests;
     }
 
-    public int getNumberOfInterests(){
-        if(currInterests == null)
-        {
-            return 0;
-        }
+    public int numberOfInterests(){
         return currInterests.size();
     }
 
@@ -90,11 +58,7 @@ public class User {
         this.friendList = friendList;
     }
 
-    public int getNumberOfFriends(){
-        if(friendList == null)
-        {
-            return 0;
-        }
+    public int numberOfFriends(){
         return friendList.size();
     }
 

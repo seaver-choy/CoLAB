@@ -14,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.anteriore.colab.Model.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,13 +34,13 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.profile_view, container, false);
 
-        final ArrayList<User> users = new ArrayList<>();
-        /*
+        final ArrayList<ProfileConnection> connections = new ArrayList<>();
+
         connections.add(new ProfileConnection("Chino Tapales", "10 connections", "26 common interests", R.drawable.profile_chino));
         connections.add(new ProfileConnection("Chris Angping", "12 connections", "31 common interestes", R.drawable.profile_chris));
         connections.add(new ProfileConnection("David Gamboa", "14 connections", "52 common interestes", R.drawable.profile_david));
         connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
-        */
+
         final List<ProfileInterest> interests = new ArrayList<>();
 
         interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
@@ -71,7 +69,7 @@ public class ProfileFragment extends Fragment {
         connectionsTab = (RelativeLayout) v.findViewById(R.id.profile_connections_button);
         interestsTab = (RelativeLayout) v.findViewById(R.id.profile_common_interest_button);
 
-        profileConnectionAdapter = new ProfileConnectionAdapter(getContext(), users);
+        profileConnectionAdapter = new ProfileConnectionAdapter(getContext(), connections);
         connectionsRecyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
         connectionsRecyclerView.setAdapter(profileConnectionAdapter);
 

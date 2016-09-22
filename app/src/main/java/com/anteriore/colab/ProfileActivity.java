@@ -12,7 +12,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.anteriore.colab.Model.Interest;
-import com.anteriore.colab.Model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,13 +36,13 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        final ArrayList<User> users = new ArrayList<>();
-        /*
+        final ArrayList<ProfileConnection> connections = new ArrayList<>();
+
         connections.add(new ProfileConnection("Chino Tapales", "10 connections", "26 common interests", R.drawable.profile_chino));
         connections.add(new ProfileConnection("Chris Angping", "12 connections", "31 common interestes", R.drawable.profile_chris));
         connections.add(new ProfileConnection("David Gamboa", "14 connections", "52 common interestes", R.drawable.profile_david));
         connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
-        */
+
         final List<ProfileInterest> interests = new ArrayList<>();
 
         interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
@@ -96,7 +95,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        profileConnectionAdapter = new ProfileConnectionAdapter(this, users);
+        profileConnectionAdapter = new ProfileConnectionAdapter(this, connections);
         connectionsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         connectionsRecyclerView.setAdapter(profileConnectionAdapter);
 

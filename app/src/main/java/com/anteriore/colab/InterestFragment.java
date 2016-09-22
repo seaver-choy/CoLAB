@@ -95,7 +95,7 @@ public class InterestFragment extends Fragment {
                 if(dataSnapshot.child("interestName").exists()) {
                     Interest currHobby = dataSnapshot.getValue(Interest.class);
 
-                    Resources resources = getActivity().getResources();
+                    Resources resources = getResources();
                     final int resourceId = resources.getIdentifier(currHobby.getInterestImage(), "drawable",
                             getActivity().getPackageName());
 
