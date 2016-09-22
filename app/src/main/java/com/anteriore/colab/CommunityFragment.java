@@ -60,6 +60,7 @@ public class CommunityFragment extends Fragment {
                 }
 
                 currUser.setCurrInterests(currInterests);
+
                 Resources resources = getResources();
                 final int resourceId = resources.getIdentifier("profile", "drawable",
                             getActivity().getPackageName());
