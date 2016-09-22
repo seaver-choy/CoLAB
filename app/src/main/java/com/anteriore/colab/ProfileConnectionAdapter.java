@@ -28,6 +28,7 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
         CardView connectionCard;
         TextView connectionName, connectionCount, commonInterestCount;
         ImageView connectionImage;
+        ImageView connectButton;
 
         public ProfileConnectionViewHolder(View itemView) {
             super(itemView);
@@ -36,12 +37,19 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
             connectionCount = (TextView) itemView.findViewById(R.id.profile_item_connections);
             commonInterestCount = (TextView) itemView.findViewById(R.id.profile_item_common_interests);
             connectionImage = (ImageView) itemView.findViewById(R.id.profile_item_photo);
+            connectButton = (ImageView) itemView.findViewById(R.id.profile_item_connect_button);
 
             connectionCard.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), ProfileActivity.class);
                     v.getContext().startActivity(intent);
+                }
+            });
+
+            connectButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
                 }
             });
         }
