@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/card_back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/back"/>
+        <TextView
+            android:id="@+id/card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:text="ARTISTS"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/colorLogoText"/>
     <com.daprlabs.aaron.swipedeck.layouts.SwipeFrameLayout
         xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
@@ -14,27 +39,27 @@
             android:id="@+id/swipe_deck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="40dp"
+            android:padding="32dp"
             swipedeck:max_visible="3"
             swipedeck:card_spacing="15dp"
             swipedeck:swipe_enabled="true"/>
         <LinearLayout
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:orientation="horizontal">
             <Button
                 android:id="@+id/swipe_left"
-                android:layout_width="92dp"
-                android:layout_height="92dp"
+                android:layout_width="98dp"
+                android:layout_height="98dp"
                 android:background="@drawable/dislike_button" />
             <Button
-                android:layout_marginLeft="36dp"
+                android:layout_marginLeft="32dp"
                 android:id="@+id/swipe_right"
-                android:layout_width="92dp"
-                android:layout_height="92dp"
+                android:layout_width="98dp"
+                android:layout_height="98dp"
                 android:background="@drawable/like_button" />
         </LinearLayout>
     </com.daprlabs.aaron.swipedeck.layouts.SwipeFrameLayout>
-</RelativeLayout>
+</LinearLayout>

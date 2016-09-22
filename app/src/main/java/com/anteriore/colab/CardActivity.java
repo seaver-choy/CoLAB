@@ -1,12 +1,12 @@
 package com.anteriore.colab;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.anteriore.colab.Model.Interest;
 import com.daprlabs.aaron.swipedeck.SwipeDeck;
@@ -15,7 +15,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CardActivity extends AppCompatActivity {
 
@@ -24,6 +23,8 @@ public class CardActivity extends AppCompatActivity {
     private SwipeDeckAdapter adapter;
     private Button dislikeButton;
     private Button likeButton;
+    private Button backButton;
+    private TextView titleText;
     private FirebaseModel fbModel;
 
     @Override
@@ -32,6 +33,10 @@ public class CardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card);
 
         fbModel = new FirebaseModel();
+
+        titleText = (TextView) findViewById(R.id.card_title);
+
+        backButton = (Button) findViewById(R.id.card_back_button);
         dislikeButton = (Button) findViewById(R.id.swipe_left);
         likeButton = (Button) findViewById(R.id.swipe_right);
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
@@ -39,8 +44,18 @@ public class CardActivity extends AppCompatActivity {
         dislikeButton.getBackground().setAlpha(192);
         likeButton.getBackground().setAlpha(192);
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
         String interestID = getIntent().getStringExtra(Interest.interestNameConstant);
         String interestType = getIntent().getStringExtra(Interest.interestTypeConstant);
+
+        titleText.setText(interestID);
 
         cardData = new ArrayList();
 
