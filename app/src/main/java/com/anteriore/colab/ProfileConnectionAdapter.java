@@ -8,19 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.anteriore.colab.Model.User;
 
 import java.util.List;
 
 public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnectionAdapter.ProfileConnectionViewHolder> {
 
     private Context context;
-    private List<ProfileConnection> connections;
+    private List<User> users;
 
-    public ProfileConnectionAdapter(Context context, List<ProfileConnection> connections) {
+    public ProfileConnectionAdapter(Context context, List<User> users) {
         this.context = context;
-        this.connections = connections;
+        this.users = users;
     }
 
     public static class ProfileConnectionViewHolder extends RecyclerView.ViewHolder {
@@ -53,14 +54,17 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
     }
 
     public void onBindViewHolder(ProfileConnectionViewHolder holder, int position) {
-        holder.connectionImage.setImageResource(connections.get(position).getConnectionImageURL());
-        holder.connectionName.setText(connections.get(position).getConnectionName());
-        holder.connectionCount.setText(connections.get(position).getConnectionCount());
-        holder.commonInterestCount.setText(connections.get(position).getCommonInterestCount());
+        holder.connectionImage.setImageResource(users.get(position).getProfilePictureResource());
+        String username = users.get(position).getFirstName() + " " + users.get(position).getLastName();
+        holder.connectionName.setText(username);
+        String connectionCount = users.get(position).getNumberOfFriends() + " connections";
+        holder.connectionCount.setText(connectionCount);
+        String commonInterestCount = users.get(position).getNumberOfInterests() + " common interests";
+        holder.commonInterestCount.setText(commonInterestCount);
     }
 
     public int getItemCount() {
-        return connections.size();
+        return users.size();
     }
 
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {

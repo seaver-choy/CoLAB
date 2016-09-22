@@ -2,6 +2,7 @@ package com.anteriore.colab;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.anteriore.colab.Model.Interest;
+import com.anteriore.colab.Model.User;
 import com.daprlabs.aaron.swipedeck.SwipeDeck;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,12 +30,15 @@ public class CardActivity extends AppCompatActivity {
     private Button likeButton;
     private Button backButton;
     private TextView titleText;
+    private FirebaseAuth auth;
     private FirebaseModel fbModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card);
+
+        auth = FirebaseAuth.getInstance();
 
         fbModel = new FirebaseModel();
 
@@ -51,7 +58,6 @@ public class CardActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
 
         String interestID = getIntent().getStringExtra(Interest.interestNameConstant);
         String interestType = getIntent().getStringExtra(Interest.interestTypeConstant);
@@ -98,7 +104,7 @@ public class CardActivity extends AppCompatActivity {
             }
         };
 
-        fbModel.getmDatabase().child("colab").child("interests").child(interestType).child(interestID).addChildEventListener(CEL);
+        fbModel.getmDatabase().child("colab").child(Interest.FirebaseChildName).child(interestType).child(interestID).addChildEventListener(CEL);
         fbModel.getmDatabase().removeEventListener(CEL);
 
         adapter = new SwipeDeckAdapter(cardData, this);
@@ -119,6 +125,9 @@ public class CardActivity extends AppCompatActivity {
             @Override
             public void cardSwipedRight(long positionInAdapter) {
                 Log.i("CardActivity", "card was swiped right, position in adapter: " + positionInAdapter);
+
+                fbModel.getUserFromDatabase(auth.getCurrentUser().getUid()).child(User.FirebaseInterestList)
+                        .push().setValue(cardData.get((int) positionInAdapter));
                 if (cardData.size() - 1== (int) positionInAdapter) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
