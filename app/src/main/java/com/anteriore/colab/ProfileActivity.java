@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.anteriore.colab.Model.Interest;
 import com.anteriore.colab.Model.User;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView profileName;
     private TextView profilePosition;
     private TextView quote;
+    private TextView profileCardConnectionText, profileCardInterestText;
     private Button backButton;
     private Button connectButton;
     private RelativeLayout connectionsTab;
@@ -31,11 +34,18 @@ public class ProfileActivity extends AppCompatActivity {
     private RecyclerView interestsRecyclerView;
     private ProfileConnectionAdapter profileConnectionAdapter;
     private ProfileInterestAdapter interestAdapter;
-
+    private FirebaseModel fbModel;
+    private User currentUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        currentUser = (User) getIntent().getSerializableExtra("selectedUser");
+
+
+        fbModel = new FirebaseModel();
+
 
         final ArrayList<User> users = new ArrayList<>();
         /*
@@ -65,18 +75,34 @@ public class ProfileActivity extends AppCompatActivity {
         connectionsRecyclerView = (RecyclerView) findViewById(R.id.profile_activity_recyclerview);
         interestsRecyclerView = (RecyclerView) findViewById(R.id.profile_activity_card_recyclerview);
         profileImage = (ImageView) findViewById(R.id.profile_activity_photo);
+        profileImage.setImageResource(currentUser.getProfilePictureResource());
         profileName = (TextView) findViewById(R.id.profile_activity_name);
+        profileName.setText(currentUser.getFirstName() + " " + currentUser.getLastName());
         profilePosition = (TextView) findViewById(R.id.profile_activity_field);
+        profilePosition.setText("");
         quote = (TextView) findViewById(R.id.profile_activity_quote);
+        quote.setText("");
         backButton = (Button) findViewById(R.id.profile_activity_back_button);
         connectButton = (Button) findViewById(R.id.profile_activity_connect_button);
         connectionsTab = (RelativeLayout) findViewById(R.id.profile_connections_button);
+        profileCardConnectionText = (TextView) findViewById(R.id.profile_card_connection_text);
+        profileCardConnectionText.setText(String.valueOf(currentUser.getNumberOfFriends()));
         interestsTab = (RelativeLayout) findViewById(R.id.profile_common_interest_button);
+        profileCardInterestText = (TextView) findViewById(R.id.profile_card_interest_text);
+        profileCardInterestText.setText(String.valueOf(currentUser.getNumberOfInterests()));
 
         backButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        connectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fbModel.getUserFromDatabase(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .child(User.FirebaseFriendList).push().setValue(currentUser);
             }
         });
 

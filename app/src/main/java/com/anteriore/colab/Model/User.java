@@ -2,12 +2,13 @@ package com.anteriore.colab.Model;
 
 import com.anteriore.colab.Notification;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Seaver on 9/3/2016.
  */
-public class User {
+public class User implements Serializable{
 
     private String firstName;
     private String lastName;
@@ -81,11 +82,11 @@ public class User {
         }
         return currInterests.size();
     }
-
+    /*
     public ArrayList<User> getFriendList() {
         return friendList;
     }
-
+    */
     public void setFriendList(ArrayList<User> friendList) {
         this.friendList = friendList;
     }

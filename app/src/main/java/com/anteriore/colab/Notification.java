@@ -1,6 +1,8 @@
 package com.anteriore.colab;
 
-public class Notification {
+import java.io.Serializable;
+
+public class Notification implements Serializable{
 
     private int notificationImg;
     private String notificationText;

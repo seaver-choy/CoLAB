@@ -1,8 +1,9 @@
 package com.anteriore.colab.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Interest {
+public class Interest implements Serializable{
     private String interestName;
     private String interestImage;
     private String interestID;

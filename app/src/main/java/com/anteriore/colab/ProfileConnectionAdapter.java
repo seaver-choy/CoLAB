@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
         CardView connectionCard;
         TextView connectionName, connectionCount, commonInterestCount;
         ImageView connectionImage;
+        User currentUser;
 
         public ProfileConnectionViewHolder(View itemView) {
             super(itemView);
@@ -41,6 +43,7 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), ProfileActivity.class);
+                    intent.putExtra("selectedUser", currentUser);
                     v.getContext().startActivity(intent);
                 }
             });
@@ -61,6 +64,7 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
         holder.connectionCount.setText(connectionCount);
         String commonInterestCount = users.get(position).getNumberOfInterests() + " common interests";
         holder.commonInterestCount.setText(commonInterestCount);
+        holder.currentUser = users.get(position);
     }
 
     public int getItemCount() {

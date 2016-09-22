@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.anteriore.colab.Model.Interest;
 import com.anteriore.colab.Model.User;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -47,29 +48,45 @@ public class CommunityFragment extends Fragment {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("Child Added", dataSnapshot.getKey());
 
-                User currUser = dataSnapshot.getValue(User.class);
+                if(FirebaseAuth.getInstance().getCurrentUser().getUid() != dataSnapshot.getKey()) {
+                    User currUser = dataSnapshot.getValue(User.class);
 
-                GenericTypeIndicator<HashMap<String, Interest>> t = new GenericTypeIndicator<HashMap<String,Interest>>(){};
-                HashMap<String, Interest> tempList = dataSnapshot.child(User.FirebaseInterestList).getValue(t);
+                    GenericTypeIndicator<HashMap<String, Interest>> interestTemp = new GenericTypeIndicator<HashMap<String, Interest>>() {
+                    };
+                    if(dataSnapshot.hasChild(User.FirebaseInterestList)) {
+                        HashMap<String, Interest> tempList = dataSnapshot.child(User.FirebaseInterestList).getValue(interestTemp);
 
 
-                ArrayList<Interest> currInterests = new ArrayList();
-                for(Interest value: tempList.values())
-                {
-                    currInterests.add(value);
-                }
+                        ArrayList<Interest> currInterests = new ArrayList();
+                        for (Interest value : tempList.values()) {
+                            currInterests.add(value);
+                        }
 
-                currUser.setCurrInterests(currInterests);
+                        currUser.setCurrInterests(currInterests);
+                    }
+                    if(dataSnapshot.hasChild(User.FirebaseFriendList)) {
+                        GenericTypeIndicator<HashMap<String, User>> userTemp = new GenericTypeIndicator<HashMap<String, User>>() {
+                        };
 
-                Resources resources = getResources();
-                final int resourceId = resources.getIdentifier("profile", "drawable",
+                        HashMap<String, User> userTempList = dataSnapshot.child(User.FirebaseFriendList).getValue(userTemp);
+
+                        ArrayList<User> currFriends = new ArrayList();
+                        for (User value : userTempList.values()) {
+                            currFriends.add(value);
+                        }
+
+                        currUser.setFriendList(currFriends);
+                    }
+                    Resources resources = getResources();
+                    final int resourceId = resources.getIdentifier("profile", "drawable",
                             getActivity().getPackageName());
 
-                currUser.setProfilePictureResource(resourceId);
+                    currUser.setProfilePictureResource(resourceId);
 
-                currentUsers.add(currUser);
+                    currentUsers.add(currUser);
 
-                profileConnectionAdapter.notifyDataSetChanged();
+                    profileConnectionAdapter.notifyDataSetChanged();
+                }
             }
 
             @Override
