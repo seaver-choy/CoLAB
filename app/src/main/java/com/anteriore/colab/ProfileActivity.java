@@ -29,7 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
     private RecyclerView connectionsRecyclerView;
     private RecyclerView interestsRecyclerView;
     private ProfileConnectionAdapter profileConnectionAdapter;
-    private InterestProfileAdapter interestAdapter;
+    private ProfileInterestAdapter interestAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,20 +43,23 @@ public class ProfileActivity extends AppCompatActivity {
         connections.add(new ProfileConnection("David Gamboa", "14 connections", "52 common interestes", R.drawable.profile_david));
         connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
 
-        final List<Interest> interests = new ArrayList<>();
+        final List<ProfileInterest> interests = new ArrayList<>();
 
-        interests.add(new Interest("LIKES", "interest_likes"));
-        interests.add(new Interest("PASSIONS", "interest_passion"));
-        interests.add(new Interest("HOBBIES", "interest_hobbies"));
-
-        interests.add(new Interest("LIKES", "interest_likes"));
-        interests.add(new Interest("PASSIONS", "interest_passion"));
-        interests.add(new Interest("HOBBIES", "interest_hobbies"));
-
-        interests.add(new Interest("LIKES", "interest_likes"));
-        interests.add(new Interest("PASSIONS", "interest_passion"));
-        interests.add(new Interest("HOBBIES", "interest_hobbies"));
-
+        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
+        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
+        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
+        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
+        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
+        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
+        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
+        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
+        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
+        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
+        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
+        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
+        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
+        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
+        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
 
         connectionsRecyclerView = (RecyclerView) findViewById(R.id.profile_activity_recyclerview);
         interestsRecyclerView = (RecyclerView) findViewById(R.id.profile_activity_card_recyclerview);
@@ -96,8 +99,8 @@ public class ProfileActivity extends AppCompatActivity {
         connectionsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         connectionsRecyclerView.setAdapter(profileConnectionAdapter);
 
-        interestAdapter = new InterestProfileAdapter(interests);
-        interestsRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+        interestAdapter = new ProfileInterestAdapter(interests);
+        interestsRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL));
         interestsRecyclerView.setAdapter(interestAdapter);
     }
 }
