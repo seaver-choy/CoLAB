@@ -16,6 +16,7 @@ public class Interest {
     public static String COLUMN_IMAGE = "interest_image";
     public static String COLUMN_ID = "interestID";
     public static String COLUMN_TYPE = "interest_type";
+    public static String FirebaseChildName = "interests";
     public enum interestTypes {
         hobby, like, passion
     }

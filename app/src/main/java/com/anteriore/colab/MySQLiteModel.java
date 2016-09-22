@@ -23,6 +23,7 @@ public class MySQLiteModel extends SQLiteOpenHelper{
                 + Interest.COLUMN_NAME + " TEXT,"
                 + Interest.COLUMN_TYPE + " TEXT,"
                 + Interest.COLUMN_IMAGE + " TEXT" + ")");
+
     }
 
     @Override
