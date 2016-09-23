@@ -92,6 +92,8 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
 
                         } else {
+                            FirebaseModel fbModel = FirebaseModel.getInstance(getApplicationContext());
+                            fbModel.loadUsers();
                             Intent intent = new Intent(LoginActivity.this, InterestActivity.class);
                             startActivity(intent);
                             finish();

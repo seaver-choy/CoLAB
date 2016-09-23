@@ -40,7 +40,7 @@ public class CardActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        fbModel = new FirebaseModel();
+        fbModel = FirebaseModel.getInstance(getApplicationContext());
 
         titleText = (TextView) findViewById(R.id.card_title);
 

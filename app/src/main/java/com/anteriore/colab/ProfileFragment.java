@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.anteriore.colab.Model.Interest;
 import com.anteriore.colab.Model.User;
 
 import java.util.ArrayList;
@@ -43,8 +44,8 @@ public class ProfileFragment extends Fragment {
         connections.add(new ProfileConnection("David Gamboa", "14 connections", "52 common interestes", R.drawable.profile_david));
         connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
         */
-        final List<ProfileInterest> interests = new ArrayList<>();
-
+        final List<Interest> interests = new ArrayList<>();
+        /*
         interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
         interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
         interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
@@ -60,6 +61,7 @@ public class ProfileFragment extends Fragment {
         interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
         interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
         interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
+        */
 
         connectionsRecyclerView = (RecyclerView) v.findViewById(R.id.profile_recyclerview);
         interestsRecyclerView = (RecyclerView) v.findViewById(R.id.profile_card_recyclerview);

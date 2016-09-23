@@ -48,8 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         currentUser = (User) getIntent().getSerializableExtra("selectedUser");
 
-
-        fbModel = new FirebaseModel();
+        fbModel = FirebaseModel.getInstance(getApplicationContext());
 
 
         final ArrayList<User> users = new ArrayList<>();

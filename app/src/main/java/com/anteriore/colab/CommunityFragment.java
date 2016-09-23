@@ -31,7 +31,7 @@ public class CommunityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.community_view, container, false);
 
-        FirebaseModel fbModel = new FirebaseModel();
+        FirebaseModel fbModel = FirebaseModel.getInstance(getContext());
         /*
         final ArrayList<ProfileConnection> connections = new ArrayList<>();
 
@@ -41,77 +41,7 @@ public class CommunityFragment extends Fragment {
         connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
         */
 
-        final ArrayList<User> currentUsers = new ArrayList();
-
-        ChildEventListener CEL = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.d("Child Added", dataSnapshot.getKey());
-
-                if(FirebaseAuth.getInstance().getCurrentUser().getUid() != dataSnapshot.getKey()) {
-                    User currUser = dataSnapshot.getValue(User.class);
-
-                    GenericTypeIndicator<HashMap<String, Interest>> interestTemp = new GenericTypeIndicator<HashMap<String, Interest>>() {
-                    };
-                    if(dataSnapshot.hasChild(User.FirebaseInterestList)) {
-                        HashMap<String, Interest> tempList = dataSnapshot.child(User.FirebaseInterestList).getValue(interestTemp);
-
-
-                        ArrayList<Interest> currInterests = new ArrayList();
-                        for (Interest value : tempList.values()) {
-                            currInterests.add(value);
-                        }
-
-                        currUser.setCurrInterests(currInterests);
-                    }
-                    if(dataSnapshot.hasChild(User.FirebaseFriendList)) {
-                        GenericTypeIndicator<HashMap<String, User>> userTemp = new GenericTypeIndicator<HashMap<String, User>>() {
-                        };
-
-                        HashMap<String, User> userTempList = dataSnapshot.child(User.FirebaseFriendList).getValue(userTemp);
-
-                        ArrayList<User> currFriends = new ArrayList();
-                        for (User value : userTempList.values()) {
-                            currFriends.add(value);
-                        }
-
-                        currUser.setFriendList(currFriends);
-                    }
-                    Resources resources = getResources();
-                    final int resourceId = resources.getIdentifier("profile", "drawable",
-                            getActivity().getPackageName());
-
-                    currUser.setProfilePictureResource(resourceId);
-
-                    currentUsers.add(currUser);
-
-                    profileConnectionAdapter.notifyDataSetChanged();
-                }
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-
-        fbModel.getmDatabase().child("colab").child(User.FirebaseChildName).addChildEventListener(CEL);
-        fbModel.getmDatabase().removeEventListener(CEL);
+        final ArrayList<User> currentUsers = fbModel.getUserList();
 
         connectionsRecyclerView = (RecyclerView) v.findViewById(R.id.community_recyclerview);
 

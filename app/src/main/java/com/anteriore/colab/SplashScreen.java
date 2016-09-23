@@ -12,6 +12,7 @@ public class SplashScreen extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGTH = 1500;
     private TextView coLABSplash;
+    private FirebaseModel fbModel;
     @Override
     public void onCreate(Bundle icicle) {
 
@@ -21,6 +22,8 @@ public class SplashScreen extends AppCompatActivity {
         coLABSplash = (TextView) findViewById(R.id.splash_welcome);
         Typeface chalkduster = Typeface.createFromAsset(getAssets(), "fonts/chalkduster.ttf");
         coLABSplash.setTypeface(chalkduster);
+
+        fbModel = FirebaseModel.getInstance(getApplicationContext());
 
         new Handler().postDelayed(new Runnable() {
             @Override

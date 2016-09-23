@@ -31,7 +31,7 @@ public class DeckFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.activity_card, container, false);
 
-        fbModel = new FirebaseModel();
+        fbModel = FirebaseModel.getInstance(getContext());
         dislikeButton = (Button) v.findViewById(R.id.swipe_left);
         likeButton = (Button) v.findViewById(R.id.swipe_right);
         cardStack = (SwipeDeck) v.findViewById(R.id.swipe_deck);

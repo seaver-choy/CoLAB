@@ -33,10 +33,10 @@ public class InterestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interest);
 
-        fbModel = new FirebaseModel();
-        final ArrayList<Interest> likeList = new ArrayList<>();
-        final ArrayList<Interest> passionList = new ArrayList<>();
-        final ArrayList<Interest> hobbyList = new ArrayList<>();
+        fbModel = FirebaseModel.getInstance(getApplicationContext());
+        final ArrayList<Interest> likeList = fbModel.getLikeList();
+        final ArrayList<Interest> passionList = fbModel.getPassionList();
+        final ArrayList<Interest> hobbyList = fbModel.getHobbyList();
         likesRecyclerView = (RecyclerView) findViewById(R.id.likes_recyclerview);
         hobbiesRecyclerView = (RecyclerView) findViewById(R.id.hobbies_recyclerview);
         passionRecyclerView = (RecyclerView) findViewById(R.id.passion_recyclerview);
@@ -55,135 +55,6 @@ public class InterestActivity extends AppCompatActivity {
         final InterestAdapter likeAdapter = new InterestAdapter(likeList);
         final InterestAdapter passionAdapter = new InterestAdapter(passionList);
         final InterestAdapter hobbyAdapter = new InterestAdapter(hobbyList);
-
-        ChildEventListener CEL = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.d("Child Added", dataSnapshot.getKey());
-                if(dataSnapshot.child("interestName").exists()) {
-                    Interest currLike = dataSnapshot.getValue(Interest.class);
-
-                    Resources resources = getApplication().getApplicationContext().getResources();
-                    final int resourceId = resources.getIdentifier(currLike.getInterestImage(), "drawable",
-                            getApplication().getApplicationContext().getPackageName());
-
-                    currLike.setInterestType(Interest.interestTypes.like);
-                    currLike.setInterestID(dataSnapshot.getKey());
-                    currLike.setInterestImageResource(resourceId);
-                    likeList.add(currLike);
-                }
-                likeAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-
-        fbModel.getmDatabase().child("colab").child("interests").child("like").addChildEventListener(CEL);
-        fbModel.getmDatabase().removeEventListener(CEL);
-
-        CEL = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.d("Child Added", dataSnapshot.getKey());
-                if(dataSnapshot.child("interestName").exists()) {
-                    Interest currHobby = dataSnapshot.getValue(Interest.class);
-
-                    Resources resources = getResources();
-                    final int resourceId = resources.getIdentifier(currHobby.getInterestImage(), "drawable",
-                            getPackageName());
-
-                    currHobby.setInterestType(Interest.interestTypes.hobby);
-                    currHobby.setInterestID(dataSnapshot.getKey());
-                    currHobby.setInterestImageResource(resourceId);
-                    hobbyList.add(currHobby);
-                }
-                hobbyAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-
-        fbModel.getmDatabase().child("colab").child("interests").child("hobby").addChildEventListener(CEL);
-        fbModel.getmDatabase().removeEventListener(CEL);
-
-        CEL = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.d("Child Added", dataSnapshot.getKey());
-                if(dataSnapshot.child("interestName").exists()) {
-                    Interest currPassion = dataSnapshot.getValue(Interest.class);
-
-                    Resources resources = getResources();
-                    final int resourceId = resources.getIdentifier(currPassion.getInterestImage(), "drawable",
-                            getPackageName());
-
-                    currPassion.setInterestType(Interest.interestTypes.passion);
-                    currPassion.setInterestID(dataSnapshot.getKey());
-                    currPassion.setInterestImageResource(resourceId);
-                    passionList.add(currPassion);
-                }
-                passionAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-
-        fbModel.getmDatabase().child("colab").child("interests").child("passion").addChildEventListener(CEL);
-        fbModel.getmDatabase().removeEventListener(CEL);
 
         likesRecyclerView.setAdapter(likeAdapter);
         hobbiesRecyclerView.setAdapter(hobbyAdapter);

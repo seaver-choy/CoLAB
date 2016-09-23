@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         auth = FirebaseAuth.getInstance();
-        fbModel = new FirebaseModel();
+        fbModel = FirebaseModel.getInstance(getBaseContext());
         setContentView(R.layout.activity_register);
 
         inputFirstname = (EditText) findViewById(R.id.register_input_firstname);
