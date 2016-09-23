@@ -7,13 +7,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.anteriore.colab.Model.Interest;
+
 import java.util.List;
 
 public class ProfileInterestAdapter extends RecyclerView.Adapter<ProfileInterestAdapter.ProfileInterestHolder> {
 
-    private List<ProfileInterest> interestList;
+    private List<Interest> interestList;
 
-    public ProfileInterestAdapter(List<ProfileInterest> interestList) {
+    public ProfileInterestAdapter(List<Interest> interestList) {
         this.interestList = interestList;
     }
 
@@ -35,10 +37,10 @@ public class ProfileInterestAdapter extends RecyclerView.Adapter<ProfileInterest
 
     @Override
     public void onBindViewHolder(ProfileInterestHolder holder, int position) {
-        String interestName = interestList.get(position).getInterestTitle();
+        String interestName = interestList.get(position).getInterestName();
 
         holder.interestTitle.setText(interestName);
-        holder.interestBackground.setImageResource(interestList.get(position).getInterestImg());
+        holder.interestBackground.setImageResource(interestList.get(position).getInterestImageResource());
     }
 
     @Override

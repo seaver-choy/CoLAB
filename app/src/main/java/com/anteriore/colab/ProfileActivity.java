@@ -1,5 +1,6 @@
 package com.anteriore.colab;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,9 @@ import android.widget.TextView;
 import com.anteriore.colab.Model.Interest;
 import com.anteriore.colab.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
     private ProfileInterestAdapter interestAdapter;
     private FirebaseModel fbModel;
     private User currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +59,11 @@ public class ProfileActivity extends AppCompatActivity {
         connections.add(new ProfileConnection("David Gamboa", "14 connections", "52 common interestes", R.drawable.profile_david));
         connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
         */
-        final List<ProfileInterest> interests = new ArrayList<>();
 
+        final List<Interest> interests = new ArrayList<>();
+
+        interestAdapter = new ProfileInterestAdapter(interests);
+        /*
         interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
         interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
         interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
@@ -71,6 +79,48 @@ public class ProfileActivity extends AppCompatActivity {
         interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
         interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
         interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
+        */
+
+        ChildEventListener CEL = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Log.d("Child Added", dataSnapshot.getKey());
+                if(dataSnapshot.child("interestName").exists()) {
+                    Interest currCard = dataSnapshot.getValue(Interest.class);
+
+                    Resources resources = getApplication().getApplicationContext().getResources();
+                    final int resourceId = resources.getIdentifier(currCard.getInterestImage(), "drawable",
+                            getApplication().getApplicationContext().getPackageName());
+
+                    currCard.setInterestImageResource(resourceId);
+                    interests.add(currCard);
+                }
+                interestAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        fbModel.getmDatabase().child("colab").child(User.FirebaseChildName).child(currentUser.getUserID()).child(User.FirebaseInterestList).addChildEventListener(CEL);
+        fbModel.getmDatabase().removeEventListener(CEL);
 
         connectionsRecyclerView = (RecyclerView) findViewById(R.id.profile_activity_recyclerview);
         interestsRecyclerView = (RecyclerView) findViewById(R.id.profile_activity_card_recyclerview);
@@ -126,7 +176,6 @@ public class ProfileActivity extends AppCompatActivity {
         connectionsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         connectionsRecyclerView.setAdapter(profileConnectionAdapter);
 
-        interestAdapter = new ProfileInterestAdapter(interests);
         interestsRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL));
         interestsRecyclerView.setAdapter(interestAdapter);
     }
