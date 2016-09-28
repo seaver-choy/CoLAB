@@ -88,10 +88,6 @@
                 android:textStyle="italic"
                 android:textSize="14sp"
                 android:text="''Just ride the waves.''"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dip"
-                android:background="@color/colorLogoText"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
