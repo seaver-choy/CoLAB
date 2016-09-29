@@ -176,13 +176,19 @@ public class FirebaseModel {
         mDatabase.child("colab").child(Interest.FirebaseChildName).child(Passion.FirebaseChildName).addChildEventListener(CEL);
     }
 
+    public void writeNotificationToUser(Notification notification, User user){
+        notification.setNotificationText(currentUser.getFirstName() + currentUser.getLastName() + " wants to connect with you!");
+        mDatabase.child("colab").child(User.FirebaseChildName).child(user.getUserID()).child(User.FirebaseNotificationList).push().setValue(notification);
+    }
+
     public void loadUsers(){
         ChildEventListener CEL = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("Child Added", dataSnapshot.getKey());
+                Log.e("FirebaseAuth", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-                if(FirebaseAuth.getInstance().getCurrentUser().getUid() != dataSnapshot.getKey()) {
+                if(FirebaseAuth.getInstance().getCurrentUser().getUid().equalsIgnoreCase(dataSnapshot.getKey())) {
                     User currUser = dataSnapshot.getValue(User.class);
 
                     if(dataSnapshot.hasChild(User.FirebaseInterestList)) {
@@ -198,6 +204,8 @@ public class FirebaseModel {
                             context.getPackageName());
 
                     currUser.setProfilePictureResource(resourceId);
+
+                    Log.e("What", "Added user.");
 
                     userList.add(currUser);
                 }else{
@@ -215,7 +223,7 @@ public class FirebaseModel {
                             context.getPackageName());
 
                     currUser.setProfilePictureResource(resourceId);
-
+                    Log.e("YEHEY", "Got the current logged in user.");
                     currentUser = currUser;
                 }
             }
@@ -307,6 +315,8 @@ public class FirebaseModel {
 
         return currFriends;
     }
+
+
 
     public ArrayList<User> getUserList() {
         return userList;

@@ -4,23 +4,35 @@ import java.io.Serializable;
 
 public class Notification implements Serializable{
 
-    private int notificationImg;
+    private int notificationImage;
+    private String notificationImageName;
     private String notificationText;
 
-    public Notification(int notificationImg, String notificationText) {
-        this.notificationImg = notificationImg;
+    public Notification(int notificationImage, String notificationText) {
+        this.notificationImage = notificationImage;
         this.notificationText = notificationText;
+    }
+
+    public Notification(String notificationImageName, String notificationText)
+    {
+        this.notificationImageName = notificationImageName;
+        this.notificationText = notificationText;
+    }
+
+    public Notification(String notificationImageName)
+    {
+        this.notificationImageName = notificationImageName;
     }
 
     public Notification() {
     }
 
-    public int getNotificationImg() {
-        return notificationImg;
+    public int getNotificationImage() {
+        return notificationImage;
     }
 
-    public void setNotificationImg(int notificationImg) {
-        this.notificationImg = notificationImg;
+    public void setNotificationImage(int notificationImage) {
+        this.notificationImage = notificationImage;
     }
 
     public String getNotificationText() {

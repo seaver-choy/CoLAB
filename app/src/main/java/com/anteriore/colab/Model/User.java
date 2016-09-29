@@ -24,6 +24,7 @@ public class User implements Serializable{
     public static String FirebaseChildName = "users";
     public static String FirebaseFriendList = "friendList";
     public static String FirebaseInterestList = "currInterests";
+    public static String FirebaseNotificationList = "currNotifications";
     public static String TABLE_NAME = "users";
     public static String COLUMN_FIRST_NAME = "firstname";
     public static String COLUMN_LAST_NAME = "lastname";
@@ -42,7 +43,13 @@ public class User implements Serializable{
         friendList = new ArrayList<>();
     }
 
+    /*
     public ArrayList<Notification> getCurrNotifications() {
+        return currNotifications;
+    }
+    */
+
+    public ArrayList<Notification> getNotificationList(){
         return currNotifications;
     }
 
@@ -71,6 +78,11 @@ public class User implements Serializable{
         return currInterests;
     }
     */
+
+    public ArrayList<Interest> getListOfInterests(){
+        return currInterests;
+    }
+
     public void setCurrInterests(ArrayList<Interest> currInterests) {
         this.currInterests = currInterests;
     }
@@ -87,6 +99,11 @@ public class User implements Serializable{
         return friendList;
     }
     */
+
+    public ArrayList<User> getListOfFriends(){
+        return friendList;
+    }
+
     public void setFriendList(ArrayList<User> friendList) {
         this.friendList = friendList;
     }

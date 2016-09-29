@@ -53,6 +53,8 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
             connectButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
+                    Notification notification = new Notification("profile", currentUser.getFirstName() + currentUser.getLastName());
+                    FirebaseModel.getInstance(v.getContext()).writeNotificationToUser(notification, currentUser);
                 }
             });
         }
@@ -76,6 +78,9 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
     }
 
     public int getItemCount() {
+        if(users == null){
+            return 0;
+        }
         return users.size();
     }
 
