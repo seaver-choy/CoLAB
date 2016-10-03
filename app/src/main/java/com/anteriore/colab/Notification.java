@@ -6,7 +6,9 @@ public class Notification implements Serializable{
 
     private int notificationImage;
     private String notificationImageName;
+    private String notificationID;
     private String notificationText;
+    private String fromUserID;
 
     public Notification(int notificationImage, String notificationText) {
         this.notificationImage = notificationImage;
@@ -25,6 +27,22 @@ public class Notification implements Serializable{
     }
 
     public Notification() {
+    }
+
+    public String getNotificationID() {
+        return notificationID;
+    }
+
+    public void setNotificationID(String notificationID) {
+        this.notificationID = notificationID;
+    }
+
+    public String getFromUserID() {
+        return fromUserID;
+    }
+
+    public void setFromUserID(String fromUserID) {
+        this.fromUserID = fromUserID;
     }
 
     public int getNotificationImage() {

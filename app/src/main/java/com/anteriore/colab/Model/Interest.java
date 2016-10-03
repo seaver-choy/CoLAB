@@ -77,4 +77,17 @@ public class Interest implements Serializable{
     public void setInterestImage(String interestImage) {
         this.interestImage = interestImage;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof Interest)
+        {
+            Interest interest = (Interest) o;
+            if(interest.getInterestName().equalsIgnoreCase(this.getInterestName()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

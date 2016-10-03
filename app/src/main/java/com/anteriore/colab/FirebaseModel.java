@@ -30,6 +30,7 @@ public class FirebaseModel {
     private ArrayList<Interest> likeList;
     private ArrayList<Interest> hobbyList;
     private ArrayList<Interest> passionList;
+    private ArrayList<Notification> notificationList;
     private User currentUser;
     private Context context;
 
@@ -51,6 +52,7 @@ public class FirebaseModel {
         this.hobbyList = new ArrayList();
         this.passionList = new ArrayList();
         this.userList = new ArrayList();
+        this.notificationList = new ArrayList();
 
         ChildEventListener CEL = new ChildEventListener() {
             @Override
@@ -177,10 +179,28 @@ public class FirebaseModel {
     }
 
     public void writeNotificationToUser(Notification notification, User user){
-        notification.setNotificationText(currentUser.getFirstName() + currentUser.getLastName() + " wants to connect with you!");
-        mDatabase.child("colab").child(User.FirebaseChildName).child(user.getUserID()).child(User.FirebaseNotificationList).push().setValue(notification);
+        notification.setNotificationText(currentUser.getFirstName() + " " + currentUser.getLastName() + " wants to connect with you!");
+        notification.setFromUserID(currentUser.getUserID());
+        DatabaseReference reference = mDatabase.child("colab").child(User.FirebaseChildName).child(user.getUserID()).child(User.FirebaseNotificationList);
+        String key = reference.push().getKey();
+        notification.setNotificationID(key);
+        reference.child(key).setValue(notification);
     }
 
+    public void removeNotificationFromUser(Notification notification){
+        mDatabase.child("colab").child(User.FirebaseChildName).child(currentUser.getUserID()).child(User.FirebaseNotificationList).child(notification.getNotificationID()).removeValue();
+    }
+
+    public void addAsFriendsThroughNotification(Notification notification){
+        User user = new User(notification.getFromUserID());
+        if(userList.contains(user))
+        {
+            Log.e("HELLO", "I GOT IN.");
+            user = userList.get(userList.indexOf(user));
+            mDatabase.child("colab").child(User.FirebaseChildName).child(currentUser.getUserID()).child(User.FirebaseFriendList).push().setValue(user);
+            mDatabase.child("colab").child(User.FirebaseChildName).child(user.getUserID()).child(User.FirebaseFriendList).push().setValue(currentUser);
+        }
+    }
     public void loadUsers(){
         ChildEventListener CEL = new ChildEventListener() {
             @Override
@@ -188,7 +208,7 @@ public class FirebaseModel {
                 Log.d("Child Added", dataSnapshot.getKey());
                 Log.e("FirebaseAuth", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-                if(FirebaseAuth.getInstance().getCurrentUser().getUid().equalsIgnoreCase(dataSnapshot.getKey())) {
+                if(!FirebaseAuth.getInstance().getCurrentUser().getUid().equalsIgnoreCase(dataSnapshot.getKey())) {
                     User currUser = dataSnapshot.getValue(User.class);
 
                     if(dataSnapshot.hasChild(User.FirebaseInterestList)) {
@@ -223,8 +243,11 @@ public class FirebaseModel {
                             context.getPackageName());
 
                     currUser.setProfilePictureResource(resourceId);
-                    Log.e("YEHEY", "Got the current logged in user.");
+                    Log.e("YEHEY", "Got the current logged in user." + currUser.getUserID());
                     currentUser = currUser;
+                    currentUser.setUserID(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                    loadNotifications();
                 }
             }
 
@@ -250,6 +273,47 @@ public class FirebaseModel {
         };
 
         mDatabase.child("colab").child(User.FirebaseChildName).addChildEventListener(CEL);
+    }
+
+    private void loadNotifications(){
+        ChildEventListener CEL = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Notification notification = dataSnapshot.getValue(Notification.class);
+
+
+                Resources resources = context.getResources();
+                final int resourceId = resources.getIdentifier("profile", "drawable",
+                        context.getPackageName());
+
+                notification.setNotificationImage(resourceId);
+
+                notificationList.add(notification);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        mDatabase.child("colab").child(User.FirebaseChildName).child(currentUser.getUserID()).child(User.FirebaseNotificationList).addChildEventListener(CEL);
     }
 
     public DatabaseReference getmDatabase() {
@@ -332,6 +396,10 @@ public class FirebaseModel {
 
     public ArrayList<Interest> getPassionList() {
         return passionList;
+    }
+
+    public ArrayList<Notification> getNotificationList() {
+        return notificationList;
     }
 
     public User getCurrentUser() {

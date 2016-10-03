@@ -150,8 +150,8 @@ public class ProfileActivity extends AppCompatActivity {
         connectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fbModel.getUserFromDatabase(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .child(User.FirebaseFriendList).push().setValue(currentUser);
+                Notification notification = new Notification("profile", currentUser.getFirstName() + " " + currentUser.getLastName());
+                FirebaseModel.getInstance(v.getContext()).writeNotificationToUser(notification, currentUser);
             }
         });
 

@@ -22,18 +22,21 @@ public class NotificationsFragment extends Fragment {
     private RecyclerView notificationsRecyclerView;
     private NotificationAdapter notificationsAdapter;
     private Paint p = new Paint();
-
+    private FirebaseModel fbModel;
+    private ArrayList<Notification> notifications;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.notifications_view, container, false);
 
-        final ArrayList<Notification> notifications = new ArrayList<>();
-
+        fbModel = FirebaseModel.getInstance(getContext());
+        notifications = fbModel.getNotificationList();
+        /*
         notifications.add(new Notification(R.drawable.profile_chino, "Chino Tapales requested to follow you"));
         notifications.add(new Notification(R.drawable.profile_chris, "Chris Angping requested to follow you"));
         notifications.add(new Notification(R.drawable.profile_david, "David Gamboa requested to follow you"));
         notifications.add(new Notification(R.drawable.profile_chino, "Chino Tapales requested to follow you"));
         notifications.add(new Notification(R.drawable.profile_chris, "Chris Angping requested to follow you"));
         notifications.add(new Notification(R.drawable.profile_david, "David Gamboa requested to follow you"));
+        */
 
         notificationsRecyclerView = (RecyclerView) v.findViewById(R.id.notification_recyclerview);
 
@@ -55,8 +58,10 @@ public class NotificationsFragment extends Fragment {
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction){
                 int position = viewHolder.getAdapterPosition();
                 if(direction == ItemTouchHelper.LEFT){
-                }
-                else{
+                    fbModel.removeNotificationFromUser(notifications.get(position));
+                } if (direction == ItemTouchHelper.RIGHT){
+                    fbModel.addAsFriendsThroughNotification(notifications.get(position));
+                    fbModel.removeNotificationFromUser(notifications.get(position));
                 }
             }
             @Override

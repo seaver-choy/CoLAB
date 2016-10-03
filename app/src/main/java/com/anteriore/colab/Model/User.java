@@ -33,13 +33,16 @@ public class User implements Serializable{
     public User() {
     }
 
+    public User(String userID){
+        this.userID = userID;
+    }
+
     public User(String userID, String firstName, String lastName, String email){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.userID = userID;
         currInterests = new ArrayList<>();
-        currInterests.add(new Interest("HELLO", "profile"));
         friendList = new ArrayList<>();
     }
 
@@ -154,5 +157,19 @@ public class User implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if(o instanceof User)
+        {
+            User user = (User) o;
+            if(user.getUserID().equalsIgnoreCase(this.getUserID()))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
