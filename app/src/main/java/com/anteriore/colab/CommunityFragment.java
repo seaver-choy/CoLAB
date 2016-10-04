@@ -32,14 +32,6 @@ public class CommunityFragment extends Fragment {
         View v = inflater.inflate(R.layout.community_view, container, false);
 
         FirebaseModel fbModel = FirebaseModel.getInstance(getContext());
-        /*
-        final ArrayList<ProfileConnection> connections = new ArrayList<>();
-
-        connections.add(new ProfileConnection("Chino Tapales", "10 connections", "26 common interests", R.drawable.profile_chino));
-        connections.add(new ProfileConnection("Chris Angping", "12 connections", "31 common interestes", R.drawable.profile_chris));
-        connections.add(new ProfileConnection("David Gamboa", "14 connections", "52 common interestes", R.drawable.profile_david));
-        connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
-        */
 
         final ArrayList<User> currentUsers = fbModel.getUserList();
 

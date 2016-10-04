@@ -1,7 +1,5 @@
 package com.anteriore.colab.Model;
 
-import com.anteriore.colab.Notification;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -25,6 +23,7 @@ public class User implements Serializable{
     public static String FirebaseFriendList = "friendList";
     public static String FirebaseInterestList = "currInterests";
     public static String FirebaseNotificationList = "currNotifications";
+    public static String FirebaseMessagingList = "currMessages";
     public static String TABLE_NAME = "users";
     public static String COLUMN_FIRST_NAME = "firstname";
     public static String COLUMN_LAST_NAME = "lastname";

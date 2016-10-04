@@ -41,30 +41,8 @@ public class ProfileFragment extends Fragment {
         FirebaseModel fbModel = FirebaseModel.getInstance(getContext());
         User user = fbModel.getCurrentUser();
         final ArrayList<User> users = user.getListOfFriends();
-        /*
-        connections.add(new ProfileConnection("Chino Tapales", "10 connections", "26 common interests", R.drawable.profile_chino));
-        connections.add(new ProfileConnection("Chris Angping", "12 connections", "31 common interestes", R.drawable.profile_chris));
-        connections.add(new ProfileConnection("David Gamboa", "14 connections", "52 common interestes", R.drawable.profile_david));
-        connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
-        */
+
         final List<Interest> interests = user.getListOfInterests();
-        /*
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        */
 
         connectionsRecyclerView = (RecyclerView) v.findViewById(R.id.profile_recyclerview);
         interestsRecyclerView = (RecyclerView) v.findViewById(R.id.profile_card_recyclerview);

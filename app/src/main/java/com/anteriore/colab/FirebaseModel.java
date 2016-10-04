@@ -11,6 +11,7 @@ import android.util.Log;
 import com.anteriore.colab.Model.Hobby;
 import com.anteriore.colab.Model.Interest;
 import com.anteriore.colab.Model.Like;
+import com.anteriore.colab.Model.Notification;
 import com.anteriore.colab.Model.Passion;
 import com.anteriore.colab.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -341,6 +342,32 @@ public class FirebaseModel {
         mDatabase.child("colab").child("users").child(user.getUserID()).setValue(user);
     }
 
+    public int getNumberOfSimilarInterests(User user)
+    {
+        int noOfSimilar = 0;
+        if(currentUser.getListOfInterests() != null && user.getListOfInterests() != null) {
+            for (int i = 0; i < currentUser.getListOfInterests().size(); i++) {
+                if (user.getListOfInterests().contains(currentUser.getListOfInterests().get(i))) {
+                    noOfSimilar++;
+                }
+            }
+        }
+        return noOfSimilar;
+    }
+
+    public int getNumberOfSimilarFriends(User user)
+    {
+        int noOfSimilar = 0;
+        if(currentUser.getListOfFriends() != null && user.getListOfFriends() != null) {
+            for (int i = 0; i < currentUser.getListOfFriends().size(); i++) {
+                if (user.getListOfFriends().contains(currentUser.getListOfFriends().get(i))) {
+                    noOfSimilar++;
+                }
+            }
+        }
+        return noOfSimilar;
+    }
+
     public void writeNewUserToDatabase(User user)
     {
         mDatabase.child("colab").child("users").child(user.getUserID()).setValue(user);
@@ -379,8 +406,6 @@ public class FirebaseModel {
 
         return currFriends;
     }
-
-
 
     public ArrayList<User> getUserList() {
         return userList;

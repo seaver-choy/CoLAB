@@ -1,4 +1,4 @@
-package com.anteriore.colab;
+package com.anteriore.colab.Model;
 
 import java.io.Serializable;
 

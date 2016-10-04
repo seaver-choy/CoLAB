@@ -15,6 +15,9 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.anteriore.colab.Model.Notification;
+
 import java.util.ArrayList;
 
 public class NotificationsFragment extends Fragment {

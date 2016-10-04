@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.anteriore.colab.Model.Notification;
 import com.anteriore.colab.Model.User;
 
 import java.util.List;
@@ -19,10 +19,11 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
 
     private Context context;
     private List<User> users;
-
+    private FirebaseModel fbModel;
     public ProfileConnectionAdapter(Context context, List<User> users) {
         this.context = context;
         this.users = users;
+        this.fbModel = FirebaseModel.getInstance(context);
     }
 
     public static class ProfileConnectionViewHolder extends RecyclerView.ViewHolder {
@@ -70,9 +71,9 @@ public class ProfileConnectionAdapter extends RecyclerView.Adapter<ProfileConnec
         holder.connectionImage.setImageResource(users.get(position).getProfilePictureResource());
         String username = users.get(position).getFirstName() + " " + users.get(position).getLastName();
         holder.connectionName.setText(username);
-        String connectionCount = users.get(position).getNumberOfFriends() + " connections";
+        String connectionCount = fbModel.getNumberOfSimilarFriends(users.get(position)) + " connections";
         holder.connectionCount.setText(connectionCount);
-        String commonInterestCount = users.get(position).getNumberOfInterests() + " common interests";
+        String commonInterestCount = fbModel.getNumberOfSimilarInterests(users.get(position)) + " common interests";
         holder.commonInterestCount.setText(commonInterestCount);
         holder.currentUser = users.get(position);
     }

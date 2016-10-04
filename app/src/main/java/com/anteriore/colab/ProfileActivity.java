@@ -14,8 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.anteriore.colab.Model.Interest;
+import com.anteriore.colab.Model.Notification;
 import com.anteriore.colab.Model.User;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -52,33 +52,12 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         final ArrayList<User> users = new ArrayList<>();
-        /*
-        connections.add(new ProfileConnection("Chino Tapales", "10 connections", "26 common interests", R.drawable.profile_chino));
-        connections.add(new ProfileConnection("Chris Angping", "12 connections", "31 common interestes", R.drawable.profile_chris));
-        connections.add(new ProfileConnection("David Gamboa", "14 connections", "52 common interestes", R.drawable.profile_david));
-        connections.add(new ProfileConnection("Seaver Choy", "16 connections", "12 common interests", R.drawable.profile_seaver));
-        */
+
 
         final List<Interest> interests = new ArrayList<>();
 
         interestAdapter = new ProfileInterestAdapter(interests);
-        /*
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        interests.add(new ProfileInterest("ACTING", R.drawable.interest_hobbies));
-        interests.add(new ProfileInterest("DANCING", R.drawable.interest_ideologies));
-        interests.add(new ProfileInterest("PAINTING", R.drawable.interest_likes));
-        */
+
 
         ChildEventListener CEL = new ChildEventListener() {
             @Override

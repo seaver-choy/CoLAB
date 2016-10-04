@@ -32,6 +32,7 @@ public class CardActivity extends AppCompatActivity {
     private TextView titleText;
     private FirebaseAuth auth;
     private FirebaseModel fbModel;
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class CardActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         fbModel = FirebaseModel.getInstance(getApplicationContext());
+        currentUser = fbModel.getCurrentUser();
 
         titleText = (TextView) findViewById(R.id.card_title);
 
@@ -78,7 +80,9 @@ public class CardActivity extends AppCompatActivity {
                             getApplication().getApplicationContext().getPackageName());
 
                     currLike.setInterestImageResource(resourceId);
-                    cardData.add(currLike);
+                    if(!currentUser.getListOfInterests().contains(currLike)) {
+                        cardData.add(currLike);
+                    }
                 }
                 adapter.notifyDataSetChanged();
             }
