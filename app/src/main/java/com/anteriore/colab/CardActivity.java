@@ -80,8 +80,10 @@ public class CardActivity extends AppCompatActivity {
                             getApplication().getApplicationContext().getPackageName());
 
                     currLike.setInterestImageResource(resourceId);
-                    if(!currentUser.getListOfInterests().contains(currLike)) {
-                        cardData.add(currLike);
+                    if(currentUser.getListOfInterests() != null) {
+                        if (!currentUser.getListOfInterests().contains(currLike)) {
+                            cardData.add(currLike);
+                        }
                     }
                 }
                 adapter.notifyDataSetChanged();

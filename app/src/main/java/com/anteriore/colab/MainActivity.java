@@ -91,4 +91,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     //TODO: onResume()
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }
