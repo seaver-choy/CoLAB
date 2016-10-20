@@ -2,221 +2,301 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\customtabs\23.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.android.support-customtabs-23.4.0_c3d9c1af8be5e68a545bf61ec60796f3f62ddd39.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="3b7173b3df4c7029699919414400041f64519e34">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-9.4.0_0fd3708a82ed4d36873b85ae91f0e70cf2144c31.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\24.0.0\2943c74db6d4346ab8c6531adac91fa05c137c40\support-annotations-24.0.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\support-annotations-24.0.0_40de4c377a3ab00c1705b66a4a49c3067abd63b1.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.4.0\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
         revision="23.0.3"
         sha1="88848548ab56d4fbf3d2d1b0c85bf1ff9b4c1f4b">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-9.4.0_72796b14e99496a948d0882d1a6bd63f5af5160f.jar" />
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.4.0_95c4dca86944ae7e0275251c2a945529bb3bd729/classes.dex" />
     </item>
     <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="814fc0c3ec69a944add398217d90077301501a74">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.makeramen-roundedimageview-2.2.1_495ddadffd2f2e45763ba3220c39bed92c91ff88.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.0.0_9937f8c463f49e270758fd668a4cd31c239f7bc4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-database-connection-9.4.0_cf3331fae5096ff6e2549cf45c9ffbe30d60e74f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="4b630471536351be7c3c3100735c75b7ad2cbd84">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-auth-9.4.0_7d92ead2c5ab66800c9bae0d006faf1cf8599d99.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\design\24.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.0.0_6615bfd1081ba83b2186a97819f38fe67c52cbe7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.0.0_ec27d399102712c28c7320da5c7c03552b80f018.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.0.0_2848905c69f4f0922bbfc0f3ed0ea90b1fc4e86e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_e0d3a06cf13dc1ab24469109249cf12dca1edfa1.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="34762013d39dbe6c656050589c44e8b61b9a2c5d">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-auth-common-9.4.0_262e208e443d8a8d239be5070a5d7c480e827bba.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-9.4.0_377c5452fba1cfcd46f3c872e634c32dcb47507a.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="84bf369090a8f7e293817efbd6ccf31ada1be32b">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-database-9.4.0_ffdde33cfb9d0680adcc973f0bdfded84bd6e339.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0_3cb9e226cb99e8a9b4d186f88ab06a60e30fb66d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.2.1_979edfa059dc9a6d548e71cf1b663815f6b15c67.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.16.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="99d79164a8f983161bdb59b1403b9e4a1127aae1">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.facebook.android-facebook-android-sdk-4.16.1_1adb5a5b33bfaced5e38da2c7791509e1a21652a.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-9.4.0_ce2ca58349bb70d987911c7ae50baca9623ae66c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.aurelhubert\ahbottomnavigation\1.3.3\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="4234bd96344a30c7130d4bd89f3ab9116c30931b">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.aurelhubert-ahbottomnavigation-1.3.3_dd6f4311ab20f81bb7bd9bc287fd61e32b96780d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0_da1e58a564bc819f9a4f7f471a941f10d15f1458.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.4.0_ab3584296bdf347437604b03615a0de67f32ad31.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.4.0_d3fd56f452d9fc1e490d1d40a906a4bbbc11e502.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="a440fb3fec30ff925e9f601cc458fb6671834cb2">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-impl-9.4.0_a41f32f7dcee062ffe7d818a7ec224072cddb143.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.0.0_b87159a5632769afc5d55a76c35854484e622772.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="6bc41d9d6fd12d2ef23c785a259011001f4a1a5b">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-auth-module-9.4.0_aefe00eed681f629e6fb5cffacb62971b8301513.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.daprlabs.aaron\swipedeck\2.0.6\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="5684cffaa6e2bba5ad9d4a4da6c31a155ccb5391">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.daprlabs.aaron-swipedeck-2.0.6_e94f1c2cce1ef18c653a8c665d003bf581f7f10a.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/chinotapales/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
         revision="23.0.3"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_a8f7694de89f2a56b7f130eb7e3e6c3134d59fd6.jar" />
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_4169a2f9b660cf1d6e7d7e8e839edeb5090e322a/classes.dex" />
     </item>
     <item
-        jar="C:\Users\Seaver\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.9\e4362e62f1ba92e360b197d6d7ffae67e5ecae9a\rxjava-1.1.9.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.0.0_8e281d85c4c4b5a4ca88039efbbef0092be3ee61/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.9/e4362e62f1ba92e360b197d6d7ffae67e5ecae9a/rxjava-1.1.9.jar"
+        jumboMode="true"
+        optimize="true"
         revision="23.0.3"
         sha1="e4362e62f1ba92e360b197d6d7ffae67e5ecae9a">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\rxjava-1.1.9_b00fa6b2f3b8494297de3c8f7577ad828285fe71.jar" />
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.9_28aec2bf3c6bf83bc0533c941e7b1d06e5ab301b/classes.dex" />
     </item>
     <item
-        jar="C:\Users\Seaver\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_044ec40e027a077cf7bc3eb1df5f98dd57d3b21b.jar" />
-    </item>
-    <item
-        jar="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.4.0\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
         revision="23.0.3"
         sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
-        <dex dex="C:\Users\Seaver\Documents\GitHub\CoLAB\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-9.4.0_18188a9ef812355ff5e7037be25b23644078e5e0.jar" />
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.4.0_9f5c77b6b42d20e2c83c7b1fdf08a111e433f535/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.4.0_64364dbfcc5c64d9070c972217d61972a3120acf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="34762013d39dbe6c656050589c44e8b61b9a2c5d">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.4.0_f1db9d0f19c297f5e562d2f836a1297efe594b83/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_b4f49f99f29c1d7942f9198fa5637baae91aabcb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.4.0_19a713dea3c647557861d8be2b966a4761c8fc73/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_6d9fee560344f83ab4105fbda3543465a065cef4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7e2fa2a563c7b64434d938e864156f986cd08b10">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2e2f4023bdb938c0bc14b27eff684f346b01f77f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3b7173b3df4c7029699919414400041f64519e34">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.4.0_e9194770d0218f5bf19a51018a30a1914d1c9983/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.0.0_c09f9a4d20e8e69c20673398c3cd1a83b5d02bc5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.4.0_0bd3eb2b8fe0f0f5f3ea82c0c207cad4e60c7283/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.4.0_ac67505f1dc38a99107b99d6bee44653714fd87d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.reactivex-rxandroid-1.2.1_f936475e6eaf17a3b672f5b1b2e7e4134c115522/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.0.0_85ea5086e3e2c283785b04b210be4afd642d6795/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-applinks-1.4.0_b73c6c37698bbadaabff291c5594e9b66d9afaac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_e307a05cfb630a72da7bd56d524c4042219618e2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a440fb3fec30ff925e9f601cc458fb6671834cb2">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.4.0_14f0bf16b3aff4a81b8c49dfb8b61947781d6718/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.0.0_7ff9b5e2c6ea7ba933e83ed2312910d83869290c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.daprlabs.aaron/swipedeck/2.0.6/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5684cffaa6e2bba5ad9d4a4da6c31a155ccb5391">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.daprlabs.aaron-swipedeck-2.0.6_8074bf94ab1d5ab20e8cbdf3eedfbc948ca9f6e0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4b630471536351be7c3c3100735c75b7ad2cbd84">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.4.0_51a916ca4718463d6fbc9f11b42bbe6423a9809e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_c5de9c46a1a4cc8ad2f75e3648018c59ce62669c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.16.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="99d79164a8f983161bdb59b1403b9e4a1127aae1">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.android-facebook-android-sdk-4.16.1_7631aec8177aa8826685c7a7458929b6c32b8dfc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.4.0_114c9cf09ceef3284df97ddc551b26eb1bceb423/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6bc41d9d6fd12d2ef23c785a259011001f4a1a5b">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.4.0_7e45511f9defcb95b8aab4540a1d6b048cf17eb9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="814fc0c3ec69a944add398217d90077301501a74">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.makeramen-roundedimageview-2.2.1_0b458a97bdf16d4803a267a92b9c5ea8f7bb65e4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="84bf369090a8f7e293817efbd6ccf31ada1be32b">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.4.0_afc41cde3aa0a6e62be53f3c92f19a2fb463c3b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.0.0_6a027da3b9e3d62286a2aca8252f608a11beb60e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-customtabs-23.4.0_0d90c57e0849d0da3f4c327d29140999a46cb218/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c0ed3a3c72c960b783b1e5276d7a15daf94000f3">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b5f911e33691455cd73b5d6cffe5ec4729009ac9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/exploded-aar/com.aurelhubert/ahbottomnavigation/1.3.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4234bd96344a30c7130d4bd89f3ab9116c30931b">
+        <dex dex="/Users/chinotapales/AndroidStudioProjects/CoLAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.aurelhubert-ahbottomnavigation-1.3.3_acc079d8c8c3d115b87c7360fd8f699cb5b2d986/classes.dex" />
     </item>
 
 </items>

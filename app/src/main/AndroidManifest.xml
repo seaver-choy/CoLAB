@@ -39,7 +39,8 @@
             android:value="@string/facebook_app_id" />
 
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".NewChatActivity"></activity>
     </application>
 
 </manifest>

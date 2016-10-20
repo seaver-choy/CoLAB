@@ -2,6 +2,7 @@ package com.anteriore.colab;
 
 
 import android.app.SearchableInfo;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -55,6 +56,13 @@ public class ChatFragment extends Fragment {
             }
         });
         chatMenuNewButon = (Button) v.findViewById(R.id.chat_menu_add_button);
+        chatMenuNewButon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), NewChatActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
 
 
         chatMenuAdapter = new ChatMenuAdapter(messagePreviews);
